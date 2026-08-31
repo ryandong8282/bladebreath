@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c0b">
+  <title>无铭：漳城夜｜战斗验证版</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app" aria-label="无铭：漳城夜浏览器战斗验证版">
+    <canvas id="game" width="1280" height="720" aria-label="战斗画面"></canvas>
+
+    <section id="intro" class="veil" aria-label="序章">
+      <div class="seal-card">
+        <p class="eyebrow">靖平七年 · 冬</p>
+        <h1>无铭：漳城夜</h1>
+        <p class="lead">西军越关第三日，漳京仍在凿造第一万零一尊佛。</p>
+        <p>你从造像署的灰窑中醒来。胸前无名，军籍无字。校刀院里只剩一具仍在执行命令的武俑。</p>
+        <blockquote>“无铭者，不得出院。”</blockquote>
+        <button id="startButton" type="button">开始试刃</button>
+        <p class="tiny">键盘：WASD 移动，J 攻击，K 守/弹，Space 闪，Q/E 武技，Tab 换式。</p>
+      </div>
+    </section>
+
+    <section id="result" class="veil hidden" aria-live="polite">
+      <div class="seal-card result-card">
+        <p id="resultEyebrow" class="eyebrow"></p>
+        <h2 id="resultTitle"></h2>
+        <p id="resultBody" class="lead"></p>
+        <button id="restartButton" type="button">再入灰窑</button>
+      </div>
+    </section>
+
+    <div id="mobileControls" aria-label="触屏控制">
+      <div id="stick" class="stick" aria-label="移动摇杆">
+        <div id="stickKnob" class="stick-knob"></div>
+      </div>
+      <div class="action-cluster">
+        <button class="action small skill" data-action="skill1" type="button"><span id="skill1Label">震刃</span></button>
+        <button class="action small skill" data-action="skill2" type="button"><span id="skill2Label">回锋</span></button>
+        <button class="action dodge" data-action="dodge" type="button"><span>闪</span></button>
+        <button class="action guard" data-action="guard" type="button"><span>守</span></button>
+        <button class="action attack" data-action="attack" type="button"><span>斩</span></button>
+        <button class="action switch" data-action="switch" type="button"><span>换式</span></button>
+      </div>
+    </div>
+
+    <button id="muteButton" class="mute" type="button" aria-label="切换声音">声</button>
+    <output id="bootStatus" class="boot-status" aria-live="polite">loading</output>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

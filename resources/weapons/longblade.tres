@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/weapon_definition.gd" id="1_weapon"]
+
+[resource]
+script = ExtResource("1_weapon")
+weapon_id = &"longblade"
+display_name = "长刀"
+description = "均衡的中距离武器，以主动交锋和架势压制为核心。"
+light_damage = 13.0
+light_posture_damage = 16.0
+light_range = 2.55
+light_arc_degrees = 105.0
+guard_posture_multiplier = 0.72
+parry_window_seconds = 0.17
+parry_posture_damage = 36.0
+clash_posture_damage = 15.0

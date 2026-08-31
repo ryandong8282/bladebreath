@@ -2,44 +2,36 @@
 
 <p align="center"><img src="assets/icon.svg" width="128" alt="Wuming: Night of Zhangcheng icon"></p>
 
-> **BladeBreath / 刃息** 是内部开发代号。正式项目方向是一款 iOS 优先的固定斜俯视 3D 硬核动作游戏：以北齐末年为历史母体，玩家作为“无铭者”在漳京亡国前夜，通过武器、军系流派、读招、拼刀、弹反与破势处决杀出造像署。
+> **BladeBreath / 刃息** 是内部开发代号。这是一款 iOS 优先的固定斜俯视 3D 硬核动作游戏：以北齐末年为历史母体，玩家作为“无铭者”在漳京亡国前夜，通过武器、军系流派、读招、拼刀、弹反与破势处决杀出造像署。
 
 ![status](https://img.shields.io/badge/status-M0.2%20playable-6b8c91)
 ![engine](https://img.shields.io/badge/Godot-4.7.2-478cbf)
 ![license](https://img.shields.io/badge/code-MIT-green)
 
-![M0 浏览器战斗验证截图](docs/images/m0-showcase.png)
+## 现在有什么
 
-## 现在就能看到什么
+仓库包含两套相互校验的实现：
 
-仓库里有两套相互校验的实现：
+1. **浏览器战斗验证版**：零依赖，下载仓库后双击即可玩，用来最快判断战斗有没有意思；
+2. **Godot 3D 原型**：未来 iOS 正式开发的主工程，长期战斗规则以这一版为准。
 
-1. **浏览器战斗验证版**：零依赖、双击即玩，用来最快判断战斗有没有意思；
-2. **Godot 3D 原型**：未来 iOS 正式开发的主工程，战斗规则以这一版为准。
-
-两套版本已经具备同一条最小闭环：
+两套版本具备同一条最小闭环：
 
 ```text
 读招 → 守 / 弹 / 闪 / 迎刀 → 夺取势权 → 打崩架势 → 处决
 ```
 
-当前不是完整游戏，也不是美术成片。它只证明项目最重要的一件事：
+当前不是完整游戏，也不是美术成片。它只验证最重要的一件事：
 
 > **两个简陋武俑在一块空地上对刀，是否已经能让人想再打一遍。**
 
 ## 直接试玩浏览器版
 
-最省事的方式：
+1. 下载或克隆仓库；
+2. 双击 `prototype-web/index.html`；
+3. 点击“开始试刃”。
 
-1. 打开 `prototype-web/index.html`；
-2. 点击“开始试刃”；
-3. 不需要安装引擎，也不需要启动本地服务器。
-
-也可以直接打开单文件构建：
-
-```text
-dist/Wuming-Zhangcheng-M0.html
-```
+无需联网、npm 或本地服务器。
 
 ### 控制
 
@@ -49,12 +41,12 @@ dist/Wuming-Zhangcheng-M0.html
 | 攻击、连段、处决 | `J` / 鼠标左键 / “斩” |
 | 格挡、起手弹反 | 按住 `K` / 鼠标右键 / “守” |
 | 闪身 | `Space` / `Shift` / “闪” |
-| 武技 1 | `Q` / `U` |
-| 武技 2 | `E` / `I` |
+| 武技一 | `Q` / `U` |
+| 武技二 | `E` / `I` |
 | 切换听刃 / 流影 | `Tab` / “换式” |
 | 重置 | `R` |
 
-试玩时先别管画面精不精致，只回答四个问题：
+试玩时先不评价画面精不精致，只回答四个问题：
 
 ```text
 1. 哪一次碰刀最爽？
@@ -62,6 +54,14 @@ dist/Wuming-Zhangcheng-M0.html
 3. 哪个按钮最容易按错？
 4. 输了以后还想不想立刻再来？
 ```
+
+需要便携单文件时执行：
+
+```bash
+python3 scripts/build_web_single.py
+```
+
+生成文件位于 `dist/Wuming-Zhangcheng-M0.html`，它属于本地构建产物，不必提交到仓库。
 
 ## Godot 主工程
 
@@ -85,7 +85,7 @@ dist/Wuming-Zhangcheng-M0.html
 2. 在 Project Manager 中导入仓库根目录的 `project.godot`；
 3. 点击 **Run Project**。
 
-浏览器原型已完成自动化逻辑烟雾测试。Godot 工程已通过静态结构校验，但当前交付环境没有 Godot 可执行文件，因此桌面引擎解析、iPhone 真机输入与帧率仍属于待验收项。
+浏览器原型已通过自动化逻辑烟雾测试。Godot 工程已通过静态结构校验，并由 GitHub Actions 配置真实引擎解析与 180 帧启动测试；iPhone 真机输入、温度和帧率仍需实测。
 
 ## 世界观基准
 
@@ -112,26 +112,20 @@ dist/Wuming-Zhangcheng-M0.html
 ## 项目结构
 
 ```text
-BladeBreath/                       # 内部开发目录名
+bladebreath/
 ├── project.godot                  # Godot 主工程
 ├── scenes/main.tscn
 ├── src/                           # 战斗、角色、UI、场地
 ├── resources/                     # 长刀与两种流派数据
 ├── prototype-web/                 # 可直接双击运行的浏览器版
-├── dist/                          # 单文件试玩构建
 ├── assets/                        # 原创美术、模型、音频工作区
-├── docs/
-│   ├── 00_PRODUCT_VISION.md
-│   ├── 01_COMBAT_SYSTEM.md
-│   ├── 03_ART_DIRECTION.md
-│   ├── 04_STORY_FRAMEWORK.md
-│   └── 04A_HISTORICAL_BIBLE.md
-└── scripts/                       # 校验、打包与 GitHub 发布
+├── docs/                          # 产品、战斗、历史与制作规范
+└── scripts/                       # 校验、构建、打包与发布
 ```
 
 ## 校验
 
-不安装 Godot也能校验 GDScript 结构和浏览器战斗逻辑：
+不安装 Godot 也能校验 GDScript 结构和浏览器战斗逻辑：
 
 ```bash
 ./scripts/validate.sh
@@ -143,18 +137,10 @@ BladeBreath/                       # 内部开发目录名
 GODOT_BIN=/absolute/path/to/Godot STRICT_GODOT=1 ./scripts/validate.sh
 ```
 
-## 发布到公开 GitHub 仓库
-
-当前 GitHub 连接器可以管理已有仓库，但不能创建新的仓库。仓库本地提交、标签与发布脚本已经准备好。在装有 GitHub CLI 的电脑上执行：
-
-```bash
-./scripts/publish_github.sh
-```
-
-默认会创建并推送公开仓库：
+## 公开仓库
 
 ```text
-ryandong8282/Wuming-Zhangcheng
+https://github.com/ryandong8282/bladebreath
 ```
 
 ## 设计底线
@@ -180,8 +166,8 @@ ryandong8282/Wuming-Zhangcheng
 - [iOS 导出说明](docs/07_IOS_EXPORT.md)
 - [资产生产流程](docs/08_ASSET_PIPELINE.md)
 - [第一次试玩记录表](docs/09_FIRST_PLAYTEST.md)
-- [M0.2 构建与验证报告](docs/11_M0_2_BUILD_REPORT.md)
 - [老板试玩指南](docs/10_OWNER_GUIDE.md)
+- [M0.2 构建与验证报告](docs/11_M0_2_BUILD_REPORT.md)
 - [开发 Backlog](docs/BACKLOG.md)
 - [老板许愿池](docs/WISH_POOL.md)
 

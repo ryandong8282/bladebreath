@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StyleDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/data/style_definition.gd" id="1_style"]
+
+[resource]
+script = ExtResource("1_style")
+style_id = &"hearing_blade"
+display_name = "听刃"
+description = "以弹反夺取节奏，再用锋意放大优势。"
+edge_source_text = "精准弹反"
+skill_1_name = "震刃"
+skill_2_name = "回锋"
+accent_color = Color(0.52, 0.9, 1, 1)
+max_edge = 3

@@ -1,0 +1,26 @@
+name: Combat hypothesis
+about: Propose one testable player-visible combat improvement
+title: "[Combat] "
+labels: [combat, hypothesis]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Player-visible problem
+      description: Describe what the player sees, feels, or misunderstands.
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: State the smallest change expected to improve it.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance test
+      description: Give an observable pass/fail sequence.
+    validations:
+      required: true
