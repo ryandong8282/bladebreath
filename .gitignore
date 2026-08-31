@@ -1,19 +1,47 @@
-.godot/
-.import/
-builds/
-exports/
-dist/
-*.ipa
-*.pck
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Unity / IDE generated
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.vscode/
+.idea/
+.idea_modules/
+.consulo/
+
+# OS / Apple build output
 .DS_Store
 DerivedData/
+*.ipa
 *.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/
 *.xcuserstate
-.vscode/
-.idea/
-*.log
-*.tmp
+
+# Local validation / browser reference output
+dist/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+*.log
+
+# Do not ignore Unity .meta files.
