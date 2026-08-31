@@ -2,6 +2,7 @@
 .import/
 builds/
 exports/
+dist/
 *.ipa
 *.pck
 .DS_Store

@@ -15,7 +15,7 @@ Implemented combat features include longblade attacks, guard and startup parry, 
 
 - Static GDScript/resource validation: passed.
 - Browser combat logic smoke test: passed.
-- Standalone browser build freshness check: passed.
+- Optional standalone HTML builder: included; generated output is ignored by Git.
 - Godot runtime smoke test: configured in GitHub Actions; local runtime validation requires a Godot 4.7.2 Standard binary.
 - iPhone device input, thermals and frame rate: not yet validated.
 
