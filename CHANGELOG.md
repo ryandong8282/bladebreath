@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.3.0 — Unity migration baseline
+
+- changed the source-of-truth runtime from Godot 4.7.2 / GDScript to Unity
+  6000.3.23f1 / C#;
+- added URP 17.3.0 and Input System 1.16.0 project dependencies;
+- removed Godot runtime scenes, resources and scripts from the current tree while
+  preserving them in Git history;
+- ported a first playable subset: movement, attack, guard, startup parry, dodge,
+  health, posture, stagger, execution, deterministic enemy, HUD and reset;
+- added runtime greybox generation and an editor command to create
+  `CombatSandbox.unity`;
+- added iOS landscape / IL2CPP project defaults;
+- replaced Godot CI with license-free Unity repository validation;
+- retained `prototype-web/` as a historical behavior reference;
+- documented the feature gap that remains before Unity reaches M0.2 parity.
+
 ## 0.2.0 — Zhangcheng setting and browser combat preview
 
 - renamed the product direction to **无铭：漳城夜 / Wuming: Night of Zhangcheng** while keeping BladeBreath as the internal codename;

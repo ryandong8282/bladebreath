@@ -1,178 +1,161 @@
 # 无铭：漳城夜 / Wuming: Night of Zhangcheng
 
-<p align="center"><img src="assets/icon.svg" width="128" alt="Wuming: Night of Zhangcheng icon"></p>
+> `BladeBreath / 刃息` 是内部开发代号。
 
-> **BladeBreath / 刃息** 是内部开发代号。这是一款 iOS 优先的固定斜俯视 3D 硬核动作游戏：以北齐末年为历史母体，玩家作为“无铭者”在漳京亡国前夜，通过武器、军系流派、读招、拼刀、弹反与破势处决杀出造像署。
+一款 **iOS 优先、固定斜俯视 3D、短局构筑的硬核动作游戏**。世界以北齐末年为历史母体，但王朝、人物与事件完全架空；战斗先验证读招、拼刀、格挡、弹反、闪身、破势与处决，再进入肉鸽房间和悟招构筑。
 
-![status](https://img.shields.io/badge/status-M0.2%20playable-6b8c91)
-![engine](https://img.shields.io/badge/Godot-4.7.2-478cbf)
+![status](https://img.shields.io/badge/status-M0.3%20Unity%20migration-6b8c91)
+![engine](https://img.shields.io/badge/Unity-6.3%20LTS-black)
 ![license](https://img.shields.io/badge/code-MIT-green)
 
-## 现在有什么
+## 当前状态
 
-仓库包含两套相互校验的实现：
+正式主工程已经从 Godot 切换为：
 
-1. **浏览器战斗验证版**：零依赖，下载仓库后双击即可玩，用来最快判断战斗有没有意思；
-2. **Godot 3D 原型**：未来 iOS 正式开发的主工程，长期战斗规则以这一版为准。
+- Unity `6000.3.23f1`
+- C#
+- Universal Render Pipeline `17.3.0`
+- Input System `1.16.0`
+- 横屏、iOS 优先
+- 3D 场景 + 固定倾斜俯视相机
 
-两套版本具备同一条最小闭环：
+仓库仍保留 `prototype-web/` 作为历史战斗参考，但它不再是正式运行时的源码真相。
+
+### 已经移植到 Unity C# 的灰盒能力
+
+- 相机相对移动；
+- 长刀单次攻击；
+- 按住格挡与起手弹反窗口；
+- 方向闪身与无敌窗口；
+- 生命、架势、架势恢复、崩势；
+- 对失衡敌人的近身处决；
+- 确定性训练敌人；
+- 可格挡明斩与不可格挡延迟重斩；
+- 灰盒场地、斜俯视相机、HUD 和一键重置。
+
+### 还没有移植完
+
+- 长刀三段连段；
+- 主动拼刀等级；
+- 听刃 / 流影两种流派与四个武技；
+- 势权；
+- 手机虚拟摇杆和技能按钮；
+- 命中停顿、镜头震动、震动反馈与正式 VFX；
+- 房间流程、悟招三选一和局外叙事。
+
+因此当前是 **Unity 迁移基线**，不是对旧 Godot M0.2 的功能完全等价复刻。
+
+## 第一次打开 Unity 项目
+
+1. 克隆仓库：
+
+   ```bash
+   git clone https://github.com/ryandong8282/bladebreath.git
+   cd bladebreath
+   ```
+
+2. 在 Unity Hub 安装 `6000.3.23f1`，并勾选 **iOS Build Support**。
+3. 在 Unity Hub 选择 **Add project from disk**，打开仓库根目录。
+4. 等待 Package Manager 还原 URP 与 Input System，并等待脚本编译结束。
+5. 菜单执行：
+
+   ```text
+   BladeBreath > Prototype > Create Combat Sandbox
+   ```
+
+6. 打开自动生成的 `Assets/_BladeBreath/Scenes/CombatSandbox.unity`，点击 Play。
+
+即使还没有生成场景，空场景进入 Play Mode 时，`PrototypeBootstrap` 也会自动创建灰盒；正式开发仍以保存后的 `CombatSandbox.unity` 为准。
+
+## 灰盒操作
+
+| 动作 | 键盘 / 鼠标 | 手柄 |
+|---|---|---|
+| 移动 | `WASD` / 方向键 | 左摇杆 |
+| 斩击 / 处决 | `J` / 鼠标左键 | West / X |
+| 格挡 / 起手弹反 | 按住 `K` / 鼠标右键 | 左肩键 |
+| 闪身 | `Space` / `Shift` | East / B |
+| 重置 | `R` | Start |
+
+敌人变成橙色时是可格挡明斩；变成红色并显示“不可格挡”时应闪身。敌人架势崩溃后，靠近并再次斩击即可处决。
+
+## 浏览器历史参考版
+
+不安装 Unity 时仍可直接双击：
 
 ```text
-读招 → 守 / 弹 / 闪 / 迎刀 → 夺取势权 → 打崩架势 → 处决
+prototype-web/index.html
 ```
 
-当前不是完整游戏，也不是美术成片。它只验证最重要的一件事：
+它保留旧 M0.2 的两套流派、技能和更完整的交锋规则，主要用于对照 Unity 迁移时是否丢失原来的设计意图。不要长期同时维护两套正式逻辑。
 
-> **两个简陋武俑在一块空地上对刀，是否已经能让人想再打一遍。**
-
-## 直接试玩浏览器版
-
-1. 下载或克隆仓库；
-2. 双击 `prototype-web/index.html`；
-3. 点击“开始试刃”。
-
-无需联网、npm 或本地服务器。
-
-### 控制
-
-| 操作 | 键盘 / 鼠标 |
-|---|---|
-| 移动 | `W A S D` / 方向键 / 左下摇杆 |
-| 攻击、连段、处决 | `J` / 鼠标左键 / “斩” |
-| 格挡、起手弹反 | 按住 `K` / 鼠标右键 / “守” |
-| 闪身 | `Space` / `Shift` / “闪” |
-| 武技一 | `Q` / `U` |
-| 武技二 | `E` / `I` |
-| 切换听刃 / 流影 | `Tab` / “换式” |
-| 重置 | `R` |
-
-试玩时先不评价画面精不精致，只回答四个问题：
-
-```text
-1. 哪一次碰刀最爽？
-2. 哪一次挨打不知道原因？
-3. 哪个按钮最容易按错？
-4. 输了以后还想不想立刻再来？
-```
-
-需要便携单文件时执行：
-
-```bash
-python3 scripts/build_web_single.py
-```
-
-生成文件位于 `dist/Wuming-Zhangcheng-M0.html`，它属于本地构建产物，不必提交到仓库。
-
-## Godot 主工程
-
-### 已实现的 M0 战斗
-
-- 正交斜俯视镜头与相机相对移动；
-- 长刀三段攻击，第三段拥有更高拼刀等级；
-- 按住格挡，起手短窗口为精准弹反；
-- 方向闪身、无敌帧和完美闪避；
-- 生命、架势、架势恢复、崩势与近身处决；
-- 敌我攻击有效窗口重叠时结算压刀、对刀或崩刀；
-- **听刃流**：弹反或压刀获得锋意，武技“震刃 / 回锋”；
-- **流影流**：完美闪避获得锋意，武技“掠影 / 追风斩”；
-- “造像署执刃者”循环使用普通斩、延迟重斩、快速回身斩与不可格挡横扫；
-- 键鼠、手柄与多点触屏操作；
-- 生命 / 架势 / 锋意 HUD、敌招提示、战斗日志、胜负和重置。
-
-### 启动
-
-1. 安装 Godot 4.7.2 Standard（非 .NET 版）；
-2. 在 Project Manager 中导入仓库根目录的 `project.godot`；
-3. 点击 **Run Project**。
-
-浏览器原型已通过自动化逻辑烟雾测试。Godot 工程已通过静态结构校验，并由 GitHub Actions 配置真实引擎解析与 180 帧启动测试；iPhone 真机输入、温度和帧率仍需实测。
-
-## 世界观基准
-
-- 历史母体：北齐末年，约公元 570 年代；
-- 架空王朝：**大衡**；
-- 首都：漳水平原上的 **漳京**；
-- 北方军事中心：**晋垒**；
-- 时间：**靖平七年，冬，西军越关第三日**；
-- 主角：胸前无名、军籍无字的重铸武俑 **“无铭者”**；
-- 开场地点：造像署所属 **校刀院灰窑外院**。
-
-真实历史不直接改名照搬，而是提供政治地理、军事组织、器物、墓葬壁画与石窟艺术的约束。玩家应能从线索推断时代母体，但世界中的人物与事件必须独立成立。
-
-## 技术路线
-
-- 引擎：Godot 4.7.2 Standard
-- 语言：GDScript
-- 表现：轻量 3D + 正交斜俯视镜头 + 2D HUD / VFX
-- 渲染：Mobile renderer
-- 目标平台：iPhone / iPad 横屏
-- 原型视口：1280 × 720
-- 浏览器验证：原生 HTML Canvas + JavaScript，无运行时依赖
-
-## 项目结构
+## 目录
 
 ```text
 bladebreath/
-├── project.godot                  # Godot 主工程
-├── scenes/main.tscn
-├── src/                           # 战斗、角色、UI、场地
-├── resources/                     # 长刀与两种流派数据
-├── prototype-web/                 # 可直接双击运行的浏览器版
-├── assets/                        # 原创美术、模型、音频工作区
-├── docs/                          # 产品、战斗、历史与制作规范
-└── scripts/                       # 校验、构建、打包与发布
+├── Assets/_BladeBreath/
+│   ├── Editor/                    # 场景生成与项目设置菜单
+│   ├── Scripts/
+│   │   ├── Camera/
+│   │   ├── Characters/
+│   │   ├── Core/
+│   │   ├── Input/
+│   │   ├── Prototype/
+│   │   └── UI/
+│   └── Scenes/                    # 首次执行菜单后生成
+├── Packages/manifest.json
+├── ProjectSettings/ProjectVersion.txt
+├── prototype-web/                 # 历史参考，不是正式主工程
+├── docs/
+└── scripts/validate_unity_project.py
 ```
+
+Unity 自动生成的 `Library/`、`Temp/`、`Logs/`、`Obj/`、构建目录和 IDE 工程文件不得提交；Unity 生成的 `.meta` 文件必须提交。
 
 ## 校验
 
-不安装 Godot 也能校验 GDScript 结构和浏览器战斗逻辑：
+无需 Unity License 的仓库结构校验：
 
 ```bash
-./scripts/validate.sh
+python3 scripts/validate_unity_project.py
+# 或
+make validate
 ```
 
-安装 Godot 后执行完整解析与 180 帧启动烟雾测试：
+这会验证项目版本、Package Manifest、必要 C# 文件、冲突标记、基本花括号结构，以及 Godot 运行时是否意外回流。它不能替代 Unity 编辑器编译、Play Mode 和 iPhone 真机测试。
 
-```bash
-GODOT_BIN=/absolute/path/to/Godot STRICT_GODOT=1 ./scripts/validate.sh
-```
+## 核心设计底线
 
-## 公开仓库
-
-```text
-https://github.com/ryandong8282/bladebreath
-```
-
-## 设计底线
-
-1. 读招优先于数值，玩家必须知道自己为什么输；
-2. 常规战斗只放 1–3 个真正有威胁的敌人；
-3. 武器决定动作骨架，流派改变最佳决策，不只换伤害颜色；
-4. 技能由基本功供能，锋意不能站着等出来；
-5. 北齐只是历史母体，不复制真实人物关系，也不做朝代元素乱炖；
-6. 移动端可读性和输入可靠性高于特效数量；
-7. M0 通过前不做第二把武器、大地图、装备词条或长篇演出。
+1. 先证明一刀是否有意思，再做肉鸽内容量；
+2. 读招优先于数值，玩家必须知道为什么输；
+3. 常规战斗只放 1–3 个真正有威胁的敌人；
+4. 武器决定动作骨架，流派改变最佳决策，而不是只换颜色；
+5. 技能由基本功供能，不鼓励绕圈等冷却；
+6. 北齐只是历史母体，不照搬人物，也不做朝代元素乱炖；
+7. 移动端可读性、输入可靠性和 60 FPS 高于特效数量；
+8. 当前里程碑没通过前，不加第二把武器、大地图、装备海和联网。
 
 ## 文档入口
 
 - [产品愿景与范围](docs/00_PRODUCT_VISION.md)
 - [战斗系统规格](docs/01_COMBAT_SYSTEM.md)
-- [技术架构](docs/02_TECH_ARCHITECTURE.md)
+- [Unity 技术架构](docs/02_TECH_ARCHITECTURE.md)
 - [美术方向](docs/03_ART_DIRECTION.md)
 - [世界观与剧情框架](docs/04_STORY_FRAMEWORK.md)
 - [北齐历史母体圣经](docs/04A_HISTORICAL_BIBLE.md)
 - [里程碑与验收标准](docs/05_ROADMAP.md)
 - [范围护栏](docs/06_SCOPE_GUARDRAILS.md)
-- [iOS 导出说明](docs/07_IOS_EXPORT.md)
+- [Unity → iOS 构建说明](docs/07_IOS_EXPORT.md)
 - [资产生产流程](docs/08_ASSET_PIPELINE.md)
 - [第一次试玩记录表](docs/09_FIRST_PLAYTEST.md)
 - [老板试玩指南](docs/10_OWNER_GUIDE.md)
-- [M0.2 构建与验证报告](docs/11_M0_2_BUILD_REPORT.md)
+- [旧 M0.2 构建报告](docs/11_M0_2_BUILD_REPORT.md)
+- [Unity 迁移记录](docs/13_UNITY_MIGRATION.md)
 - [开发 Backlog](docs/BACKLOG.md)
 - [老板许愿池](docs/WISH_POOL.md)
 
 ## 原创与授权边界
 
-当前仓库没有引入第三方模型、贴图、字体、动画、音乐或音效。历史文物仅作为研究资料，生产资产必须原创或使用许可明确的开放资源，并登记在 [ASSET_LICENSE.md](ASSET_LICENSE.md)。可以借鉴“武器 × 流派 × 架势战斗”的抽象结构，但不复制商业游戏的角色、名称、动画、图标、UI、关卡、剧情或数值表。
+当前 Unity 灰盒只使用引擎原生几何体、代码生成材质和 IMGUI，不含第三方模型、贴图、字体、动画、音乐或音效。外部或 AI 生成资产进入工程前必须登记在 [ASSET_LICENSE.md](ASSET_LICENSE.md)。
 
-代码采用 [MIT License](LICENSE)；原创美术、音乐与剧情资产可在对应目录另行声明授权。
+代码采用 [MIT License](LICENSE)。原创美术、音乐与剧情资产可在对应目录另行声明授权。

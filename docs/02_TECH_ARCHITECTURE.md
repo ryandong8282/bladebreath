@@ -1,152 +1,187 @@
-# 技术架构
+# Unity 技术架构
 
 ## 引擎决策
 
-原型采用 **Godot 4.7.2 Standard + GDScript + Mobile renderer**。首版不用 C#，目标是尽快验证战斗手感，而不是证明技术栈复杂。
+正式主工程采用：
 
-选择依据：
+- Unity `6000.3.23f1`
+- C#
+- Universal Render Pipeline `17.3.0`
+- Input System `1.16.0`
+- 3D 场景 + 正交斜俯视相机
+- iOS 横屏优先
 
-- 轻量、开源、无运行时抽成；
-- 3D、物理、UI、输入和资源系统完整；
-- 场景与脚本以文本为主，适合 Git 与 AI 协作；
-- 后续可以在 macOS 上导出 Xcode 工程并测试 iOS。
+选择 Unity 不是为了提前堆商业插件，而是为了获得成熟的 iOS 构建链、Animator / Timeline / Shader Graph、移动端性能工具、资源生态和更容易找到接手者的 C# 工程结构。当前仍坚持少包、少抽象、先灰盒。
 
-## 运行时结构
+## 当前启动方式
+
+`PrototypeBootstrap` 带有 `RuntimeInitializeOnLoadMethod`。任何场景进入 Play Mode 后，如果场景中没有启动器，它会自动生成：
 
 ```text
-Main
-├── ArenaBuilder（程序化校刀院灰盒）
-├── PlayerController
-│   └── Combatant
-├── EnemyController
-│   └── Combatant
-├── CameraFollow
-├── CombatHUD
-└── MobileControls
-    ├── VirtualJoystick
-    └── MobileActionButton × 6
+BladeBreath Runtime Greybox
+├── Grey Kiln Courtyard
+├── Player - Wuming
+│   ├── CharacterController
+│   ├── Combatant
+│   └── PlayerController
+├── Enemy - Statue Office Bladebearer
+│   ├── CapsuleCollider
+│   ├── Combatant
+│   └── EnemyController
+└── Prototype HUD
+
+Main Camera
+└── TopDownCamera
 ```
 
-### Combatant
+这是迁移期保险绳，不是长期关卡生产方式。执行菜单：
 
-公共结算唯一入口：
+```text
+BladeBreath > Prototype > Create Combat Sandbox
+```
+
+会生成并保存 `Assets/_BladeBreath/Scenes/CombatSandbox.unity`，同时加入 Build Settings。
+
+## 运行时组件职责
+
+### `Combatant`
+
+唯一公共战斗结算入口：
 
 - 生命、死亡；
-- 架势、恢复、失衡；
-- 格挡、弹反、闪避；
-- 武器有效窗口与拼刀等级；
-- 处决接收；
-- 镜头、HUD 与日志信号。
+- 架势、延迟恢复；
+- 格挡与起手弹反；
+- 无敌窗口；
+- 失衡与处决；
+- 战斗结果和可观察状态。
 
-### PlayerController
+它不读取输入，不控制相机，也不直接画 UI。
 
-只解释玩家意图并执行长刀动作：
+### `PlayerController`
+
+把玩家意图翻译成动作：
 
 - 相机相对移动；
-- 三段攻击与输入缓存；
-- 格挡、弹反和闪身请求；
-- 听刃 / 流影的锋意获取条件；
-- 两个流派各两项灰盒技能；
+- 转向；
+- 长刀灰盒攻击；
+- 格挡、弹反请求；
+- 方向闪身；
 - 对失衡目标的上下文处决。
 
-### EnemyController
+当前攻击参数集中在 Inspector 字段中。恢复三段连段后，再将招式定义迁移到 `ScriptableObject`，不提前制造大型技能编辑器。
 
-造像署执刃者使用确定序列：
+### `EnemyController`
 
-```text
-明斩 → 迟锋 → 回身斩 → 裂地
-```
-
-M0 故意不用行为树。执刃者首先是战斗语法老师，不是 AI 展示品。
-
-## 当前目录
+M0 训练敌人使用确定性节奏，而不是行为树：
 
 ```text
-src/
-  actors/player_controller.gd
-  actors/enemy_controller.gd
-  camera/camera_follow.gd
-  combat/combatant.gd
-  core/combat_types.gd
-  core/input_bootstrap.gd
-  data/weapon_definition.gd
-  data/style_definition.gd
-  game/main.gd
-  ui/combat_hud.gd
-  ui/mobile_action_button.gd
-  ui/mobile_controls.gd
-  ui/virtual_joystick.gd
-  world/arena_builder.gd
-  world/primitive_factory.gd
-
-resources/
-  weapons/longblade.tres
-  styles/hearing_blade.tres
-  styles/flowing_shadow.tres
+逼近 → 明斩 → 明斩 → 明斩 → 延迟不可格挡裂地 → 循环
 ```
 
-## 战斗状态优先级
+它首先是一名战斗语法老师。每次攻击拥有可见预警、结算和恢复阶段。
+
+### `PrototypeInput`
+
+统一桌面与手柄意图。它同时兼容新 Input System 与 Legacy Input Manager 预处理符号，迁移期不因输入后端设置不同而完全失去控制。
+
+移动端虚拟摇杆和按钮尚未接入；正式接入时应输出相同的动作意图，而不是让战斗代码认识具体 UI 按钮。
+
+### `TopDownCamera` 与 `PrototypeHud`
+
+只观察战斗：
+
+- 相机跟随玩家；
+- HUD 展示生命、架势、敌招和当前事件；
+- 不反向修改结算。
+
+## 当前代码结构
 
 ```text
-死亡 > 失衡 > 闪身/攻击 > 格挡 > 移动 > 待机
+Assets/_BladeBreath/
+├── Editor/
+│   └── BladeBreathProjectSetup.cs
+└── Scripts/
+    ├── Camera/TopDownCamera.cs
+    ├── Characters/EnemyController.cs
+    ├── Characters/PlayerController.cs
+    ├── Core/Combatant.cs
+    ├── Input/PrototypeInput.cs
+    ├── Prototype/PrototypeBootstrap.cs
+    └── UI/PrototypeHud.cs
 ```
 
-状态切换只有一个所有者。攻击被弹反、拼刀失败或架势崩溃时，由 `Combatant.force_stagger()` 统一中断当前动作，再由具体控制器清理自己的计时器。
-
-## 拼刀结算
-
-来招可拼刀，并且接收方仍处于自身武器有效窗口时：
+## 状态优先级
 
 ```text
-自己的 clash_level > 来招 clash_level  → 压刀
-自己的 clash_level = 来招 clash_level  → 对刀
-自己的 clash_level < 来招 clash_level  → 崩刀
+死亡 > 失衡 > 闪身 > 攻击 > 格挡 > 移动 > 待机
 ```
 
-结果只在 `Combatant` 结算。玩家控制器只负责听刃流在压刀成功后获得锋意。
+同一状态切换只能有一个所有者。被弹反、架势崩溃或死亡时，控制器必须停止继续制造有效攻击。
 
-## 输入边界
+## 下一层数据架构
 
-`InputBootstrap` 建立统一 action。键鼠和触屏都只产生同一组意图，战斗层不关心输入设备来源。触屏按钮直接绑定 action，虚拟摇杆只提供二维移动向量。
-
-## 数据策略
-
-M0 采用两层数据：
-
-1. `WeaponDefinition` / `StyleDefinition` 保存跨招式参数；
-2. 单招的前摇、有效、后摇、伤害、架势伤害和拼刀等级集中在控制器顶部或动作字典。
-
-M1 再提取 `ActionDefinition` Resource。现在不提前制造复杂编辑器工具，但禁止把可调参数散落到无关函数。
-
-## 信号通道
+达到 M0.2 功能等价后，再引入：
 
 ```text
-health_changed
-posture_changed
-edge_changed
-state_changed
-combat_log
-impact_requested
-telegraph_started
-attack_resolved
+WeaponDefinition : ScriptableObject
+StyleDefinition  : ScriptableObject
+ActionDefinition : ScriptableObject
+ModifierDefinition : ScriptableObject
 ```
 
-HUD、相机、未来音效、震动与 VFX 只能监听反馈，不能反向修改战斗结算。
+建议招式数据：
+
+```text
+ActionDefinition
+├── startup
+├── active
+├── recovery
+├── damage
+├── postureDamage
+├── clashLevel
+├── movementCurve
+├── cancelRules
+└── feedbackProfile
+```
+
+“听刃”“流影”通过战斗事件与 Modifier 组合改变决策，不在 `PlayerController` 里铺满流派名判断。
+
+## 反馈边界
+
+后续统一暴露事件：
+
+```text
+HealthChanged
+PostureChanged
+StateChanged
+AttackStarted
+AttackResolved
+ImpactRequested
+TelegraphStarted
+ExecutionStarted
+```
+
+HUD、相机、音频、震动和 VFX 订阅这些事件。反馈层可以改变观感，不能改变伤害、无敌或架势结算。
 
 ## 性能边界
 
-- 目标 60 FPS；
+- 默认目标 60 FPS，兼容档 30 FPS；
 - 常规高威胁敌人不超过 3；
-- Mobile renderer；
-- 严格限制实时阴影、透明叠加和全屏后处理；
-- 内容阶段为常用 VFX 和投射物建立对象池；
-- 不在每帧创建大批节点或遍历整棵场景树。
+- 优先 URP Forward / Mobile 友好设置；
+- 限制实时阴影、透明叠加、全屏后处理和过度 Shader 变体；
+- 高频 VFX、伤害字和投射物进入内容阶段前建立对象池；
+- 不在 `Update` 中做全场对象搜索、LINQ 聚合或持续分配；
+- 性能结论以目标 iPhone 真机 Profiler 数据为准。
 
 ## 验证策略
 
 ```bash
-./scripts/validate.sh
-GODOT_BIN=/path/to/Godot ./scripts/validate.sh
+python3 scripts/validate_unity_project.py
 ```
 
-第一条做资源路径、括号、重复类/函数、缩进和冲突标记检查；第二条额外让 Godot 解析项目并运行主场景 180 帧。完整手感仍必须人工测试。
+该命令验证仓库结构和最基本的 C# 文本完整性。每次玩家可见改动还必须通过：
+
+1. Unity Console 编译；
+2. Play Mode；
+3. 对应分辨率 Game View；
+4. 涉及移动端时的 iPhone 真机测试。
