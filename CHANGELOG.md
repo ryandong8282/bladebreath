@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1 — Unity source-control hardening
+
+- added stable `.meta` files for every tracked Unity asset and folder;
+- removed the obsolete `com.unity.modules.input` manifest entry while retaining the Input System package;
+- expanded repository validation to reject missing, duplicate or orphan Unity metadata;
+- reject a lowercase root `assets/` directory because it conflicts with Unity's `Assets/` directory on case-insensitive macOS file systems.
+
 ## 0.3.0 — Unity migration baseline
 
 - changed the source-of-truth runtime from Godot 4.7.2 / GDScript to Unity

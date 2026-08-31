@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 import sys
 
 
@@ -24,6 +25,7 @@ REQUIRED_FILES = (
 )
 
 FORBIDDEN_RUNTIME_PATHS = (
+    "assets",
     "project.godot",
     "scenes",
     "resources",
@@ -34,6 +36,8 @@ EXPECTED_PACKAGES = {
     "com.unity.inputsystem": "1.16.0",
     "com.unity.render-pipelines.universal": "17.3.0",
 }
+
+GUID_PATTERN = re.compile(r"^guid:\s*([0-9a-f]{32})\s*$", re.MULTILINE)
 
 
 def fail(message: str) -> None:
@@ -50,7 +54,7 @@ def validate_required_files() -> None:
 def validate_engine_boundary() -> None:
     for relative in FORBIDDEN_RUNTIME_PATHS:
         if (ROOT / relative).exists():
-            fail(f"Godot runtime path still exists: {relative}")
+            fail(f"legacy or case-conflicting runtime path still exists: {relative}")
 
     forbidden_suffixes = {".gd", ".tscn", ".tres", ".godot"}
     for path in ROOT.rglob("*"):
@@ -74,11 +78,53 @@ def validate_manifest() -> None:
         if actual != expected_version:
             fail(f"{package} expected {expected_version}, found {actual!r}")
 
+    if "com.unity.modules.input" in dependencies:
+        fail("remove com.unity.modules.input; the project uses com.unity.inputsystem")
+
 
 def validate_project_version() -> None:
     text = (ROOT / "ProjectSettings/ProjectVersion.txt").read_text(encoding="utf-8")
     if "m_EditorVersion: 6000.3.23f1" not in text:
         fail("unexpected Unity editor version")
+
+
+def validate_meta_files() -> None:
+    assets_root = ROOT / "Assets"
+    if not assets_root.is_dir():
+        fail("missing Assets directory")
+
+    seen_guids: dict[str, Path] = {}
+    sources = [path for path in assets_root.rglob("*") if not path.name.endswith(".meta")]
+
+    for source in sources:
+        if source.name.startswith("."):
+            continue
+
+        meta_path = Path(f"{source}.meta")
+        if not meta_path.is_file():
+            fail(f"missing Unity meta file: {meta_path.relative_to(ROOT)}")
+
+        text = meta_path.read_text(encoding="utf-8")
+        match = GUID_PATTERN.search(text)
+        if match is None:
+            fail(f"invalid or missing guid in {meta_path.relative_to(ROOT)}")
+
+        guid = match.group(1)
+        previous = seen_guids.get(guid)
+        if previous is not None:
+            fail(
+                "duplicate Unity guid "
+                f"{guid}: {previous.relative_to(ROOT)} and {meta_path.relative_to(ROOT)}"
+            )
+        seen_guids[guid] = meta_path
+
+        if source.is_dir() and "folderAsset: yes" not in text:
+            fail(f"folder meta missing folderAsset: yes: {meta_path.relative_to(ROOT)}")
+
+    for meta_path in assets_root.rglob("*.meta"):
+        source_path = Path(str(meta_path)[:-5])
+        if not source_path.exists():
+            fail(f"orphan Unity meta file: {meta_path.relative_to(ROOT)}")
 
 
 def strip_csharp_comments_and_strings(text: str) -> str:
@@ -173,8 +219,9 @@ def main() -> None:
     validate_engine_boundary()
     validate_manifest()
     validate_project_version()
+    validate_meta_files()
     validate_csharp_structure()
-    print("[OK] Unity project skeleton and C# source structure validated.")
+    print("[OK] Unity project skeleton, metadata and C# source structure validated.")
 
 
 if __name__ == "__main__":
