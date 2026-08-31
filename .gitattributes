@@ -1,7 +1,36 @@
 * text=auto eol=lf
-*.gd text eol=lf
-*.tscn text eol=lf
-*.tres text eol=lf
-*.godot text eol=lf
+
+*.cs text eol=lf
+*.shader text eol=lf
+*.compute text eol=lf
+*.asmdef text eol=lf
+*.asmref text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.py text eol=lf
 *.sh text eol=lf
 *.svg text eol=lf
+
+# Unity YAML assets should remain text for review and merging.
+*.meta text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text eol=lf
+*.mat text eol=lf
+*.anim text eol=lf
+*.controller text eol=lf
+
+# Common binary production assets.
+*.psd binary
+*.psb binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.fbx binary
+*.blend binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
