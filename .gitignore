@@ -43,5 +43,12 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 *.log
+*.blend1
+
+# One-click humanoid setup extracts a source-only FBX from the bundled CC0 archive.
+/Assets/_BladeBreath/ThirdParty/Quaternius/Animations/Editor/Extracted/
+/Assets/_BladeBreath/ThirdParty/Quaternius/Animations/Editor/Extracted.meta
+/Assets/_BladeBreath/ThirdParty/Quaternius/Animations2/Editor/Extracted/
+/Assets/_BladeBreath/ThirdParty/Quaternius/Animations2/Editor/Extracted.meta
 
 # Do not ignore Unity .meta files.

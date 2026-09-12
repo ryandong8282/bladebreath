@@ -1,0 +1,63 @@
+{
+  "asset": "Zhenjun ring-pommel longblade / 镇军环首长刀",
+  "generated_on": "2026-09-02",
+  "ownership": "Project-owned procedural mesh; no third-party model geometry included",
+  "blender_version": "5.2.1 LTS",
+  "historical_anchor": {
+    "source": "The Metropolitan Museum of Art, object 30.65.2",
+    "url": "https://www.metmuseum.org/art/collection/search/23352",
+    "record": "Chinese sword with scabbard mounts, ca. 600, Henan, 102.2 cm; ring pommel and P-shaped scabbard mounts",
+    "image_license": "Public Domain; reference image kept only in ignored Logs/weapon-reference"
+  },
+  "fictional_transformation": "Straight single-edged military longblade with a blank erased-registry plate and simplified ring decoration for mobile readability.",
+  "gameplay_purpose": "One-handed M0 weapon silhouette; preserves current light/heavy/guard/parry/clash timing and blade trail anchors.",
+  "anachronism_check": "No katana curvature or tsuba, European cruciform hilt, fantasy runes, oversized greatsword proportions, or later Ming/Qing decoration. This remains an inspired game prop rather than an exact Northern Qi reconstruction.",
+  "open_asset_audit": [
+    {
+      "source": "Quaternius Modular Weapons Pack",
+      "url": "https://quaternius.com/packs/medievalweapons.html",
+      "license": "CC0",
+      "decision": "Rejected for runtime because the generic European-medieval silhouettes conflict with the period direction."
+    },
+    {
+      "source": "OpenGameArt Katana by Clint Bellanger",
+      "url": "https://opengameart.org/content/katana",
+      "license": "CC0",
+      "decision": "Rejected for runtime because it is explicitly Japanese and would introduce the wrong guard, sheath and blade language."
+    }
+  ],
+  "geometry": {
+    "objects": 4,
+    "vertices": 1602,
+    "triangles": 3136,
+    "authored_bounds_m": {
+      "x": 0.16,
+      "y": 1.03,
+      "z": 0.06
+    }
+  },
+  "runtime_files": [
+    {
+      "file": "NorthernQiLongblade.fbx",
+      "bytes": 88412,
+      "sha256": "bd56355452f5821f4fa1d764e78874b9339ce5209acd1d020e84f70a7cdbf26b"
+    },
+    {
+      "file": "NorthernQiLongblade.stats.json",
+      "bytes": 472,
+      "sha256": "047e9aa263367fd59615496676fc0486567cb24ab2f261487a2b092de4438ec3"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "SourceArt/Weapons/NorthernQiLongblade.blend",
+      "bytes": 147674,
+      "sha256": "dd8da009412735840def5d3a6b892c5b747decff5fece27f8b00824d6324bc12"
+    },
+    {
+      "file": "scripts/blender/build_northern_qi_longblade.py",
+      "bytes": 16664,
+      "sha256": "504899d4f0425918b039e4ee4e8727363e779d29a40faf590e1b4253ce82c457"
+    }
+  ]
+}

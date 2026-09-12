@@ -1,0 +1,140 @@
+{
+  "asset": "Grey Kiln target-image depth and single-object reconstruction sources",
+  "generated_on": "2026-09-02",
+  "status": "Non-runtime target proxies plus one approved fixed-camera runtime depth backdrop and project-owned colossus sources",
+  "depth_pipeline": {
+    "tool": "Depth Anything V2 Small",
+    "repository": "https://github.com/DepthAnything/Depth-Anything-V2",
+    "commit": "a561b849ebae10a6f5ef49e26c83cbbcd36c71bf",
+    "license": "Apache-2.0 for Small",
+    "weights_outside_repository": true,
+    "manifest": {
+      "file": "SourceArt/ReferenceReconstruction/Depth/manifest.json",
+      "bytes": 1543,
+      "sha256": "ce14068ae7dab221b4f41eba196d58456c884d9b3f0a86386fc6dbb7868d6ad4"
+    }
+  },
+  "mesh_pipeline": {
+    "image_input": {
+      "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_triposr_input.png",
+      "bytes": 1417755,
+      "sha256": "c9deaebcd3684fe398b5d6d7c9de5b521e901954bb52c9d476b59141cb9d0a0c"
+    },
+    "input_lineage": [
+      {
+        "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_source_v1.png",
+        "bytes": 1925991,
+        "sha256": "e5158037a1a9a97f51cde42afcc023a0b9a51b9b697cef0e70a6e08865b1cda8"
+      },
+      {
+        "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_source_v1_cutout.png",
+        "bytes": 2102062,
+        "sha256": "1bbdbaf0251d09c0144c2bfaa03c268e19d24797cf783646045e7af95652c1cd"
+      }
+    ],
+    "tool": {
+      "name": "TripoSR",
+      "repository": "https://github.com/VAST-AI-Research/TripoSR",
+      "commit": "107cefdc244c39106fa830359024f6a2f1c78871",
+      "license": "MIT"
+    },
+    "checkpoint": {
+      "stored_outside_repository": "D:\\AI_Tools\\TripoSR\\pretrained\\model.ckpt",
+      "bytes": 1677246742,
+      "sha256": "429e2c6b22a0923967459de24d67f05962b235f79cde6b032aa7ed2ffcd970ee",
+      "license": "MIT",
+      "source": "https://huggingface.co/stabilityai/TripoSR"
+    },
+    "raw_output": {
+      "stored_outside_repository": "D:\\AI_Tools\\TripoSR\\outputs\\grey_kiln_colossus_raw.obj",
+      "bytes": 10512017,
+      "sha256": "3a2cbc26429990a27be0cfcaf3b24902daf83ec0b8de5db745da5bad2fc97cea"
+    },
+    "cleanup": "Blender import, removal of source backdrop/material residue, decimation to 25,204 triangles, stable metre scale, UV texture retention, camera-facing runtime presentation.",
+    "distribution_note": "Model weights and the 10,512,017-byte raw OBJ remain outside the repository. The cleaned OBJ, 1K texture and mobile FBX are retained."
+  },
+  "production_depth_backdrop": {
+    "purpose": "Fixed-camera 2.5D environment reconstruction for the single Grey Kiln combat arena. Fully 3D fighters, combat collision and authored lights remain separate.",
+    "image_generation": {
+      "tool": "OpenAI built-in ImageGen",
+      "generated_on": "2026-09-02",
+      "reference": "SourceArt/ReferenceReconstruction/Targets/target_05.jpg (project-owned target image used only for composition and art direction)",
+      "prompt": "Create an original clean environment-only production plate for the Grey Kiln Courtyard, matching the project-owned reference's fixed elevated 16:9 combat-camera composition: a broad cracked circular stone fighting court, two glowing kiln mouths along the rear wall, a monumental broken limestone figure on the right, pottery, bricks, timber racks, soot, ash and restrained fire haze. Use late-sixth-century northern Chinese stone, kiln and timber construction as the historical anchor. Remove every character, weapon, user-interface element, icon, health bar, title and readable text. Keep a clear central combat floor and strong foreground/midground/background separation. Do not copy any commercial-game asset, site layout, logo or proprietary design.",
+      "source": {
+        "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_environment_plate_v1.png",
+        "dimensions": [1672, 941],
+        "bytes": 2280161,
+        "sha256": "a0f6f654608cf4258daef624db2640f307064384e483238ee2ad6da8b2c0c122"
+      }
+    },
+    "runtime_albedo": {
+      "file": "Assets/_BladeBreath/Art/Environment/Generated/Textures/GreyKilnDepthBackdrop_Albedo.png",
+      "dimensions": [1024, 576],
+      "bytes": 892595,
+      "sha256": "ce90f2009b91f852ab1d99bacad361220494efe7a3f7278e21c006926f5a7d39",
+      "processing": "Centre crop to 16:9 and mobile 1K resize; Unity sRGB, mipmapped, compressed, clamp, bilinear and CPU-unreadable."
+    },
+    "depth_derivation": {
+      "tool": "Depth Anything V2 Small",
+      "repository": "https://github.com/DepthAnything/Depth-Anything-V2",
+      "commit": "a561b849ebae10a6f5ef49e26c83cbbcd36c71bf",
+      "license": "Apache-2.0 for Small",
+      "source_depth": {
+        "file": "SourceArt/ReferenceReconstruction/ProductionPlate/GreyKilnDepthBackdrop_Albedo_depth.png",
+        "dimensions": [1024, 576],
+        "bytes": 676787,
+        "sha256": "5a59175481dcff19dd4899bf807f5cbaef6ac7ede8d8bed0966c155836ee6bee"
+      },
+      "camera_proxy": {
+        "file": "SourceArt/ReferenceReconstruction/ProductionPlate/GreyKilnDepthBackdrop_Albedo_camera_proxy.ply",
+        "bytes": 1473909,
+        "sha256": "8516d591ca390416eb7b3695ed3165f3a3e1445fa2bc7742d8e63ea56e6e272ce",
+        "vertices": 36864,
+        "triangles": 70824,
+        "vertical_fov_degrees": 37
+      },
+      "runtime_inverse_depth": {
+        "file": "Assets/_BladeBreath/Art/Environment/Generated/Textures/GreyKilnDepthBackdrop_Depth.png",
+        "dimensions": [256, 144],
+        "bytes": 10473,
+        "sha256": "2277ffbb3a44cb382130e28a3c708497cc9e27dbff4bc3c814f12c9395ff905f",
+        "processing": "Normalize and invert the relative depth, resize to 256x144, keep linear/readable/uncompressed without mipmaps for one-time mesh construction."
+      }
+    },
+    "runtime_reconstruction": {
+      "component": "Assets/_BladeBreath/Scripts/Camera/DepthReconstructedBackdrop.cs",
+      "grid": [128, 72],
+      "vertices": 9216,
+      "triangles": 18034,
+      "near_distance_metres": 12,
+      "far_distance_metres": 32,
+      "vertical_fov_degrees": 37,
+      "rendering": "World-space unlit mesh, double-sided, no probes or shadows. Procedural courtyard renderers are hidden while their combat colliders and authored lights remain.",
+      "limitation": "This reconstructs only the visible camera frustum. It supports restrained follow/zoom parallax for the current arena and is not a reusable 360-degree level."
+    },
+    "historical_check": {
+      "real_anchor": "Late-sixth-century northern Chinese limestone image-making, pottery kilns, timber racks, rammed-earth/brick construction and damaged paving.",
+      "fictional_transformation": "The sealed Statue Office yard, erased military-register context, giant broken figure and exact composition belong to the fictional Great Heng setting.",
+      "gameplay_purpose": "The central clear ring preserves attack readability; the two kilns and right-side colossus anchor direction and combat spacing.",
+      "anachronism_check": "No Japanese castle silhouette, mature Song/Ming roof density, Gothic masonry, modern industrial equipment or copied commercial-fantasy prop enters the production plate."
+    }
+  },
+  "candidate_not_used": {
+    "InstantMesh": {
+      "repository": "https://github.com/TencentARC/InstantMesh",
+      "commit": "08822c52fdc399b93ea00e4fa9e596344ed52ccc",
+      "license": "Apache-2.0",
+      "reason": "Retained as a later geometry comparison; no output enters this revision."
+    },
+    "Hunyuan3D-2.1": {
+      "repository": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1",
+      "reason": "Rejected for the global iOS production chain because its community license contains territorial restrictions."
+    }
+  },
+  "historical_anchor": {
+    "real_anchor": "Late-sixth-century northern Chinese limestone image-making, residual mineral pigment, pottery kilns, timber/rammed-earth/brick construction and inscribed steles, constrained by docs/04A_HISTORICAL_BIBLE.md.",
+    "fictional_transformation": "The erased military-register marks, sealed Statue Office yard and broken colossus arrangement belong to the fictional Great Heng regime; no real site plan or commercial-game layout is copied.",
+    "gameplay_purpose": "The colossus creates a stable right-side landmark while the kiln mouths, stone rings and wall keep attack direction and circling readable.",
+    "anachronism_check": "The kit avoids Japanese castle roofs, mature Song/Ming bracket density, Gothic masonry, modern industrial forms and copied commercial fantasy motifs."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "asset": "Northern Qi-inspired M0 fighter costume",
+  "generated_on": "2026-09-02",
+  "generator": "Blender 5.2.1 LTS procedural Python pipeline",
+  "license_status": "Project-owned generated geometry; distributable with this project",
+  "fitting_reference": {
+    "source": "Assets/_BladeBreath/ThirdParty/MakeHuman/Characters/RealisticMale/RealisticMale.fbx",
+    "license": "CC0 1.0 under the MakeHuman export exception",
+    "method": "Unity exported a temporary normalized rest-pose OBJ under Logs; the reference body is excluded from the costume FBX"
+  },
+  "historical_anchor": {
+    "real_anchor": "Late-sixth-century northern Chinese round-neck belted garments, bound hair and broad lamellar military silhouettes, constrained by docs/04A_HISTORICAL_BIBLE.md.",
+    "fictional_transformation": "The enemy ash-ceramic face and blank nameplate belong to the fictional Statue Office and its erased military registers; they are not claimed as excavated Northern Qi equipment.",
+    "gameplay_purpose": "Indigo player cloth, cinnabar enemy cloth, broad shoulder plates, front lamellae and the enemy mask keep allegiance and facing readable from the fixed isometric camera.",
+    "anachronism_check": "No Japanese katana or samurai armor, European plate armor, fantasy runes, or mature Song-and-later armor motifs were introduced. Shapes remain a deliberately broad prototype rather than an archaeological reconstruction."
+  },
+  "geometry": {
+    "objects": 29,
+    "vertices": 16126,
+    "triangles": 31728,
+    "rigging": "Rigid fitted parts are attached to existing MakeHuman Humanoid bones by the Unity builder; no extra armature or animation clips are included."
+  },
+  "runtime_files": [
+    {
+      "file": "NorthernQiCostume.fbx",
+      "bytes": 797900,
+      "sha256": "e0a2fc30071129ac7026e35f177ffbf34aba938f08ee7ddae1f3b45af0bc3208"
+    },
+    {
+      "file": "NorthernQiCostume.stats.json",
+      "bytes": 2084,
+      "sha256": "5201cfff3fece4def0b5920187de035ee1737f147235c86df5beabcf8d2376e5"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "SourceArt/Characters/NorthernQiCostume.blend",
+      "bytes": 1365265,
+      "sha256": "f32427085810bf12486316dbc2686ade420fe89d9410e43a06c2e2a8f7980787"
+    },
+    {
+      "file": "scripts/blender/build_northern_qi_costume.py",
+      "bytes": 22582,
+      "sha256": "6ed160ca701a8d6765aaeb06649a0b555511a8699ca487ac1677b97b76240390"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "Landmark_Stone_NorthGate": {
+    "vertices": 640,
+    "triangles": 1248
+  },
+  "Landmark_Timber_NorthGate": {
+    "vertices": 1560,
+    "triangles": 3020
+  },
+  "Landmark_Roof_NorthGate": {
+    "vertices": 2104,
+    "triangles": 4060
+  },
+  "Landmark_Bronze_NorthGate": {
+    "vertices": 168,
+    "triangles": 324
+  },
+  "Landmark_Stone_KilnWorkshop": {
+    "vertices": 7548,
+    "triangles": 14600
+  },
+  "Landmark_Soot_KilnWorkshop": {
+    "vertices": 112,
+    "triangles": 216
+  },
+  "Landmark_Ember_KilnWorkshop": {
+    "vertices": 112,
+    "triangles": 216
+  },
+  "Landmark_Timber_KilnWorkshop": {
+    "vertices": 532,
+    "triangles": 1044
+  },
+  "Landmark_Pottery_KilnWorkshop": {
+    "vertices": 1242,
+    "triangles": 2412
+  },
+  "Landmark_Stone_RegisterSteles": {
+    "vertices": 560,
+    "triangles": 1080
+  },
+  "Landmark_Bronze_RegisterSteles": {
+    "vertices": 840,
+    "triangles": 1620
+  },
+  "Landmark_AI_BrokenColossus": {
+    "vertices": 30533,
+    "triangles": 25204
+  },
+  "TOTAL": {
+    "objects": 12,
+    "vertices": 45951,
+    "triangles": 55044
+  }
+}

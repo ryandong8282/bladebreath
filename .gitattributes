@@ -34,3 +34,7 @@
 *.wav binary
 *.mp3 binary
 *.ogg binary
+
+# Preserve original archive and license bytes for cross-platform SHA-256 checks.
+Assets/_BladeBreath/ThirdParty/Quaternius/Animations/*.zip binary
+Assets/_BladeBreath/ThirdParty/Quaternius/License/*.txt -text

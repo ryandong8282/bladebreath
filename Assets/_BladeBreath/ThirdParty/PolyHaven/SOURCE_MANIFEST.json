@@ -1,0 +1,84 @@
+{
+  "provider": "Poly Haven",
+  "retrieved": "2026-09-01",
+  "files": [
+    {
+      "asset": "stone_floor",
+      "page": "https://polyhaven.com/a/stone_floor",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "file": "StoneFloor/stone_floor_diff_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_floor/stone_floor_diff_1k.jpg",
+      "bytes": 911345,
+      "md5": "6dff94d7c1da0fd034ba714c249ec72f",
+      "sha256": "e97eb20c1b7379a0326074991bdd3cb6a15a0af399bb6798a7f814051e0937e7",
+      "license": "CC0 1.0"
+    },
+    {
+      "asset": "stone_floor",
+      "page": "https://polyhaven.com/a/stone_floor",
+      "map": "nor_dx",
+      "resolution": "1k",
+      "format": "jpg",
+      "file": "StoneFloor/stone_floor_nor_dx_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_floor/stone_floor_nor_dx_1k.jpg",
+      "bytes": 1046390,
+      "md5": "2b8211a82ab0af34d6c1a502c79a35bf",
+      "sha256": "b62a4c342a17bac2b56863cf8978670da6d4631d0e84e67ba71c0d074129f67f",
+      "license": "CC0 1.0"
+    },
+    {
+      "asset": "wood_planks",
+      "page": "https://polyhaven.com/a/wood_planks",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "file": "WoodPlanks/wood_planks_diff_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks/wood_planks_diff_1k.jpg",
+      "bytes": 609525,
+      "md5": "922505c35c2d0dc6a44da7ac77757134",
+      "sha256": "3b0669f683e4bf10f5a55a381cfa9669a7b8dfd921901829daa3b35acc2bbdec",
+      "license": "CC0 1.0"
+    },
+    {
+      "asset": "wood_planks",
+      "page": "https://polyhaven.com/a/wood_planks",
+      "map": "nor_dx",
+      "resolution": "1k",
+      "format": "jpg",
+      "file": "WoodPlanks/wood_planks_nor_dx_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_planks/wood_planks_nor_dx_1k.jpg",
+      "bytes": 654880,
+      "md5": "7e32e9d5f28f7e30b59ccee39fcad3b2",
+      "sha256": "d54a8ad99a94b9a7a7185cebce2411eb74ae9031d34c5d208dd53dc42cd53917",
+      "license": "CC0 1.0"
+    },
+    {
+      "asset": "rock_wall_08",
+      "page": "https://polyhaven.com/a/rock_wall_08",
+      "map": "Diffuse",
+      "resolution": "1k",
+      "format": "jpg",
+      "file": "RockWall/rock_wall_08_diff_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_wall_08/rock_wall_08_diff_1k.jpg",
+      "bytes": 768570,
+      "md5": "d75a5bea1a06474902c3af8cbfd5960b",
+      "sha256": "9cd907e8d8ce9317bc51a840a9e87b547fdf768aa61f5288aaee0f6fbcaac2ac",
+      "license": "CC0 1.0"
+    },
+    {
+      "asset": "rock_wall_08",
+      "page": "https://polyhaven.com/a/rock_wall_08",
+      "map": "nor_dx",
+      "resolution": "1k",
+      "format": "jpg",
+      "file": "RockWall/rock_wall_08_nor_dx_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rock_wall_08/rock_wall_08_nor_dx_1k.jpg",
+      "bytes": 1235468,
+      "md5": "6c2e2e1d304ed5915df41ea605ee33bf",
+      "sha256": "760ec7737b368b3070ceac8adcb0afab8aa9d2c6bfd41c3f709239ba36f4b25d",
+      "license": "CC0 1.0"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "generator": "OpenAI built-in ImageGen tool",
+  "generated_date": "2026-09-01",
+  "use": "Project-owned prototype character surface textures for the Unity iOS vertical slice.",
+  "processing": "1024 resize with opposing-edge feathering; mild albedo grading; wrap-aware normal map derived from luminance; JPEG quality 90 albedo and optimized PNG normal.",
+  "source_outputs_retained_at": "C:\\Users\\Admin\\.codex\\generated_images\\01a05872-9356-7de0-bf74-fa02c16ae7dd",
+  "files": [
+    {
+      "name": "wuming_ceramic",
+      "source_file": "exec-9877bd12-7eaf-4acf-8568-bfa579bb2d18.png",
+      "source_sha256": "74d610b26aeeaa7669d137774ab754ad097365edaa64347cf6ab054f0691aa20",
+      "prompt": "Use case: stylized-concept\nAsset type: seamless production game material albedo texture for a low-poly iOS Unity hero, named Wuming\nPrimary request: a bold, highly readable aged ceramic armor surface: pale limestone-white glaze broken into broad irregular fired plates, visible dark charcoal chips and binding shadows expressed only as color, sparse hairline craquelure, ash abrasion, and restrained surviving mineral pigments in faded cinnabar red and ochre. The pigment should form broken painterly bands and fragments, never letters or symbols. It must look distinctive even when the character is only 100 pixels tall.\nStyle/medium: premium hand-painted PBR albedo, stylized historical fantasy, late-sixth-century northern Chinese stone-statue and kiln-fired ceramic mood, painterly clarity similar to a polished mobile action game\nComposition/framing: perfectly flat orthographic square material filling the canvas, broad macro variation plus medium detail, seamless and tileable on all four edges\nLighting/mood: neutral diffuse base color only; absolutely no directional light, cast shadow, ambient occlusion, highlight, reflection, or vignette\nColor palette: warm ivory, limestone grey, charcoal chips, faded cinnabar, muted ochre, tiny cold blue-grey ash accents\nConstraints: strong mobile readability; seamless repeat; no object silhouette; no armor shape; no face; no human body; no text; no watermark; no logo; no decorative emblem; no modern pattern; clean usable albedo\nAvoid: plain beige stone, uniform noise, marble, glossy porcelain, white studio highlights, photoreal object photography, Japanese motifs, dragons, runes, calligraphy, mosaics, deep black voids",
+      "outputs": [
+        {
+          "file": "wuming_ceramic_albedo_1k.jpg",
+          "bytes": 358202,
+          "sha256": "c9587c5c689d6c7975a301bf8df3ad01b94da874d9e625f3e7dda576764a9483"
+        },
+        {
+          "file": "wuming_ceramic_normal_1k.png",
+          "bytes": 2194455,
+          "sha256": "49e096e501cd14764f3cfe80ead8b32a00f4d2b08d1e6d1e9659ec22139e7852"
+        }
+      ]
+    },
+    {
+      "name": "wuming_cloth",
+      "source_file": "exec-26779db4-2b35-4c02-892a-f90b3e91a65f.png",
+      "source_sha256": "75d958dfb9c4b9ff5de6740cc41e30843d1556bd9aa8da198294378bbce6bbd4",
+      "prompt": "Use case: stylized-concept\nAsset type: seamless production game material albedo texture for a low-poly iOS Unity hero's old military cloth\nPrimary request: a bold, mobile-readable woven cloth surface made from desaturated indigo and blue-black fabric, visibly repaired with irregular ash-grey patches, broken tan binding threads, short hand stitches, rubbed pale fold zones expressed only as color, soot, and a few faint rust-red stains. Use broad patch shapes and clear weave direction so the material is obvious on a character viewed from above.\nStyle/medium: premium hand-painted PBR albedo, stylized historical fantasy, practical sixth-century northern Chinese military textile mood, polished mobile action game readability\nComposition/framing: perfectly flat orthographic square material filling the canvas, broad asymmetric patchwork over medium weave detail, seamless and tileable on all four edges\nLighting/mood: neutral diffuse base color only; absolutely no directional light, cast shadow, ambient occlusion, highlight, reflection, folds, or vignette\nColor palette: charcoal blue-black, desaturated indigo, ash grey, raw tan thread, sparse muted rust red\nConstraints: strong readability at 100-pixel character height; seamless repeat; no garment silhouette; no body; no armor; no symbols; no text; no watermark; no logo; no embroidery; no modern machine stitching; clean usable albedo\nAvoid: denim, tartan, luxury brocade, glossy silk, flat uniform noise, modern camouflage, Japanese motifs, letters, runes, dramatic studio lighting",
+      "outputs": [
+        {
+          "file": "wuming_cloth_albedo_1k.jpg",
+          "bytes": 339623,
+          "sha256": "32ab71b46ed22fc29f38db8c20c3f0b4e63cb45af01de418c12f17d195e4f3ca"
+        },
+        {
+          "file": "wuming_cloth_normal_1k.png",
+          "bytes": 2317074,
+          "sha256": "aa159a9e4d76fdd1afd5dd37a10951b7db2877003fe756d40f7b577a89fa0fee"
+        }
+      ]
+    },
+    {
+      "name": "bladebearer_ceramic",
+      "source_file": "exec-5dbdbb64-2fe7-4700-baad-55e81199d001.png",
+      "source_sha256": "7c003312f341daf51f5c9389dd0e7bc62431bd361a12604ae64c74c3a1b5c04d",
+      "prompt": "Use case: stylized-concept\nAsset type: seamless production game material albedo texture for a low-poly iOS Unity enemy called the Statue Bureau Bladebearer\nPrimary request: a bold kiln-fired military ceramic surface: smoke-black and dark umber glaze in broad plates, controlled deep cinnabar-red fired sections, thin glowing-looking copper-red cracks expressed strictly as flat color (not emission or light), scraped ash-grey edges, soot bloom, and a few restrained dull bronze repair seams. It should feel standardized and severe, and remain readable when the enemy is only 100 pixels tall.\nStyle/medium: premium hand-painted PBR albedo, stylized historical fantasy, sixth-century northern Chinese kiln and military office mood, polished mobile action game readability\nComposition/framing: perfectly flat orthographic square material filling the canvas, broad organized plate rhythm with medium crack detail, seamless and tileable on all four edges\nLighting/mood: neutral diffuse base color only; absolutely no directional light, cast shadow, ambient occlusion, highlight, reflection, glow, or vignette\nColor palette: smoke black, dark umber, fired cinnabar, copper red, ash grey, sparse dull bronze\nConstraints: strong mobile readability; seamless repeat; no object silhouette; no armor shape; no face; no body; no symbols; no text; no watermark; no logo; no decorative emblem; no modern pattern; clean usable albedo\nAvoid: plain black stone, lava, glowing neon magma, sci-fi panels, shiny lacquer, Japanese motifs, dragons, runes, calligraphy, dramatic studio lighting",
+      "outputs": [
+        {
+          "file": "bladebearer_ceramic_albedo_1k.jpg",
+          "bytes": 206368,
+          "sha256": "b5c3ed416e342e2194d314dc35a259779e7e126972149cfed1da3031c02817ac"
+        },
+        {
+          "file": "bladebearer_ceramic_normal_1k.png",
+          "bytes": 1589218,
+          "sha256": "e677fa6a349c0d55af500a183c8f71d235fd084455d87d69ba1e7a0ae3d15d1b"
+        }
+      ]
+    },
+    {
+      "name": "ceramic_glaze",
+      "source_file": "exec-7a7a41f9-dd16-4f35-a962-934ce1d3d97f.png",
+      "source_sha256": "797bf89ca8effadcb8f609dd3d55c895e71cbfd101becd88b64ccc697a912ca8",
+      "prompt": "Use case: stylized-concept\nAsset type: seamless game material albedo texture for a low-poly iOS Unity character\nPrimary request: a seamless square texture of aged pale grey ceramic glaze used on a reconstructed warrior statue, with sparse hairline craquelure, worn edges implied only through color variation, faint ash staining, and a few restrained muted mineral pigment traces\nStyle/medium: hand-painted PBR albedo, stylized but materially believable, sixth-century northern Chinese stone-and-ceramic fantasy mood\nComposition/framing: perfectly flat orthographic surface texture, uniform scale across the full square, tileable on all four edges\nLighting/mood: neutral diffuse color only, no directional lighting, no baked shadows, no highlights\nColor palette: limestone grey, warm ash, tiny traces of faded ochre and muted cinnabar\nConstraints: seamless repeat; no objects; no armor silhouette; no face; no symbols; no text; no watermark; no strong cracks wider than a few pixels; mobile-readable medium-frequency detail\nAvoid: photoreal studio lighting, glossy reflections, black voids, modern porcelain patterns, Japanese motifs, decorative dragons, writing",
+      "outputs": [
+        {
+          "file": "ceramic_glaze_albedo_1k.jpg",
+          "bytes": 270705,
+          "sha256": "519bfb4c2fc91c606a0ee3098f4d219eb655b5747be69a6cf8909dee0e507cdf"
+        },
+        {
+          "file": "ceramic_glaze_normal_1k.png",
+          "bytes": 1713375,
+          "sha256": "b01e8163b88a78ce7764710bddb7086044ef1189d9506d0d19e639cc8483dd03"
+        }
+      ]
+    },
+    {
+      "name": "old_cloth",
+      "source_file": "exec-56687d71-523f-46d6-8c11-5f10f73142ad.png",
+      "source_sha256": "7ff879f6346944f0efadccde8bd9ae975abbed9071c7d8649c7281b6144c06db",
+      "prompt": "Use case: stylized-concept\nAsset type: seamless game material albedo texture for a low-poly iOS Unity character\nPrimary request: a seamless square texture of very old coarse military cloth, tightly woven but worn, with subtle frayed fibers, repaired patches implied through weave variation, ash dust, and uneven vegetable dye\nStyle/medium: hand-painted PBR albedo, stylized and readable at mobile distance, sixth-century northern Chinese military-fantasy mood\nComposition/framing: perfectly flat orthographic surface texture, uniform scale across the full square, tileable on all four edges\nLighting/mood: neutral diffuse color only, no directional lighting, no baked shadows, no highlights\nColor palette: deep blue-black, charcoal, desaturated indigo, tiny warm grey fibers\nConstraints: seamless repeat; no clothing object; no folds; no armor; no symbols; no text; no watermark; medium-frequency detail; dark but not crushed to black\nAvoid: denim, modern synthetic fabric, tartan, brocade, embroidery, logos, Japanese motifs, glossy fabric",
+      "outputs": [
+        {
+          "file": "old_cloth_albedo_1k.jpg",
+          "bytes": 389777,
+          "sha256": "89da9e1606eaca4a323a9c0cc25824c0aab1bcc10bdf45257d9d40d3729db8b2"
+        },
+        {
+          "file": "old_cloth_normal_1k.png",
+          "bytes": 2415601,
+          "sha256": "466e0cc25d7dc1b905966f277166de1754d424167d0560aa0eb137d5298e6d75"
+        }
+      ]
+    },
+    {
+      "name": "worn_metal",
+      "source_file": "exec-516a6f1b-45e9-49bd-b600-cedd39405bbe.png",
+      "source_sha256": "711cd690ae5e7e207bdeb4cd454240ab07e144fa8e2b04cdd15dcda49c1bafca",
+      "prompt": "Use case: stylized-concept\nAsset type: seamless game material albedo texture for low-poly iOS Unity character armor and weapon fittings\nPrimary request: a seamless square texture of worn dark iron with restrained aged bronze oxidation, hammered irregularity, fine scratches, ash dust, and sparse muted green-grey patina in recess-like patches\nStyle/medium: hand-painted PBR albedo, stylized and readable at mobile distance, utilitarian sixth-century northern military equipment mood\nComposition/framing: perfectly flat orthographic surface texture, uniform scale across the full square, tileable on all four edges\nLighting/mood: neutral diffuse color only, no directional lighting, no baked shadows, no highlights or reflections\nColor palette: charcoal iron, dark umber bronze, muted olive-grey patina, warm worn edges expressed as color only\nConstraints: seamless repeat; no object silhouette; no weapon; no armor shape; no rivet layout; no symbols; no text; no watermark; medium-frequency detail\nAvoid: shiny gold, chrome, sci-fi panels, fantasy runes, modern machining, Japanese motifs, dramatic specular lighting",
+      "outputs": [
+        {
+          "file": "worn_metal_albedo_1k.jpg",
+          "bytes": 295231,
+          "sha256": "f57b71de5a9d33d29b687f47a29b0e99471aa500a5b460716fa9e7285c3a89b5"
+        },
+        {
+          "file": "worn_metal_normal_1k.png",
+          "bytes": 1890178,
+          "sha256": "7496b9afe998258dadcf35ebc7fc502cc6db1afa22cbddd5a916963078ca12bd"
+        }
+      ]
+    }
+  ]
+}

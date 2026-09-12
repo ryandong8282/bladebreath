@@ -1,0 +1,41 @@
+{
+  "author": "artisticdude",
+  "license": "CC0-1.0",
+  "retrieved_on": "2026-09-02",
+  "source_page": "https://opengameart.org/content/swishes-sound-pack",
+  "download_url": "https://opengameart.org/sites/default/files/swishes.zip",
+  "archive_sha256": "7980215241b739a787dcf26f660ce510bb237900968789395a86911619795693",
+  "selection_note": "Only the one-scene combat slice sounds needed by the prototype are retained.",
+  "files": [
+    {
+      "path": "swish-1.wav",
+      "bytes": 34138,
+      "sha256": "9a15c881345c1ce1c39cc31f52f081c8c4dc81fa41111e0079400f39d3ba0e45"
+    },
+    {
+      "path": "swish-10.wav",
+      "bytes": 33862,
+      "sha256": "4f7381a76f280d3f36f962ac3f44f16f77eec44797f30715d063c81ea3859024"
+    },
+    {
+      "path": "swish-12.wav",
+      "bytes": 20892,
+      "sha256": "0513a86d428d9ed8601e93b8554580a5932c6c1a82d39d81a8f48883f1807a67"
+    },
+    {
+      "path": "swish-3.wav",
+      "bytes": 39390,
+      "sha256": "55b100e2c67fa43dad8510e31e85bbd51a68d5ce84a6e0259e21e19030083e24"
+    },
+    {
+      "path": "swish-5.wav",
+      "bytes": 34414,
+      "sha256": "4db41f2d2f97caf94627be05ff2870217fecc86534cf30f2aab413b847a0d50a"
+    },
+    {
+      "path": "swish-7.wav",
+      "bytes": 50420,
+      "sha256": "e6de737a34de16afed094d6170d7679149022f149e0a8356d2f029b0e8f4a4d7"
+    }
+  ]
+}

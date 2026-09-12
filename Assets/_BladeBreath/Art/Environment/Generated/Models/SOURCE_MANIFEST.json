@@ -1,0 +1,124 @@
+{
+  "asset": "Grey Kiln courtyard landmark kit and generated broken colossus",
+  "generated_on": "2026-09-02",
+  "generator": "Blender 5.2.1 LTS procedural kit plus project-owned TripoSR colossus cleanup",
+  "license_status": "Project-owned generated source and output; TripoSR code and Stability AI checkpoint are MIT-licensed",
+  "historical_anchor": {
+    "real_anchor": "Late-sixth-century northern Chinese limestone image-making, residual mineral pigment, pottery kilns, timber/rammed-earth/brick construction and inscribed steles, constrained by docs/04A_HISTORICAL_BIBLE.md.",
+    "fictional_transformation": "The erased military-register marks, sealed Statue Office yard and broken colossus arrangement belong to the fictional Great Heng regime; no real site plan or commercial-game layout is copied.",
+    "gameplay_purpose": "The colossus creates a stable right-side landmark while the kiln mouths, stone rings and wall keep attack direction and circling readable.",
+    "anachronism_check": "The kit avoids Japanese castle roofs, mature Song/Ming bracket density, Gothic masonry, modern industrial forms and copied commercial fantasy motifs."
+  },
+  "reconstruction": {
+    "image_input": {
+      "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_triposr_input.png",
+      "bytes": 1417755,
+      "sha256": "c9deaebcd3684fe398b5d6d7c9de5b521e901954bb52c9d476b59141cb9d0a0c"
+    },
+    "input_lineage": [
+      {
+        "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_source_v1.png",
+        "bytes": 1925991,
+        "sha256": "e5158037a1a9a97f51cde42afcc023a0b9a51b9b697cef0e70a6e08865b1cda8"
+      },
+      {
+        "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_source_v1_cutout.png",
+        "bytes": 2102062,
+        "sha256": "1bbdbaf0251d09c0144c2bfaa03c268e19d24797cf783646045e7af95652c1cd"
+      }
+    ],
+    "tool": {
+      "name": "TripoSR",
+      "repository": "https://github.com/VAST-AI-Research/TripoSR",
+      "commit": "107cefdc244c39106fa830359024f6a2f1c78871",
+      "license": "MIT"
+    },
+    "checkpoint": {
+      "stored_outside_repository": "D:\\AI_Tools\\TripoSR\\pretrained\\model.ckpt",
+      "bytes": 1677246742,
+      "sha256": "429e2c6b22a0923967459de24d67f05962b235f79cde6b032aa7ed2ffcd970ee",
+      "license": "MIT",
+      "source": "https://huggingface.co/stabilityai/TripoSR"
+    },
+    "raw_output": {
+      "stored_outside_repository": "D:\\AI_Tools\\TripoSR\\outputs\\grey_kiln_colossus_raw.obj",
+      "bytes": 10512017,
+      "sha256": "3a2cbc26429990a27be0cfcaf3b24902daf83ec0b8de5db745da5bad2fc97cea"
+    },
+    "cleanup": "Blender import, removal of source backdrop/material residue, decimation to 25,204 triangles, stable metre scale, UV texture retention, camera-facing runtime presentation.",
+    "distribution_note": "Model weights and the 10,512,017-byte raw OBJ remain outside the repository. The cleaned OBJ, 1K texture and mobile FBX are retained."
+  },
+  "geometry": {
+    "objects": 12,
+    "vertices": 45951,
+    "triangles": 55044
+  },
+  "generated_colossus_geometry": {
+    "vertices": 30533,
+    "triangles": 25204
+  },
+  "runtime_files": [
+    {
+      "file": "GreyKilnLandmarks.fbx",
+      "bytes": 3228828,
+      "sha256": "f395ccf3aa2bd1c53b43f8fe48cb53fef185ddd386bf413037c20910c7d50dbc"
+    },
+    {
+      "file": "GreyKilnLandmarks.stats.json",
+      "bytes": 1135,
+      "sha256": "925b2a24668d3924cd374e958f42333d9ce94df82d7193d7e5ef7bbb9f3f8d79"
+    },
+    {
+      "file": "../Textures/GreyKilnColossus_Albedo.png",
+      "bytes": 1212838,
+      "sha256": "9d931ece9b0978a40290a143ef012c1eb632981a2df23f7196fc97236324e2ce"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "SourceArt/Environment/GreyKilnLandmarks.blend",
+      "bytes": 1583401,
+      "sha256": "a6170e56c70f0fc7259b644198576e53c1ba19700e3bb4cfe4905e75b5a80d91"
+    },
+    {
+      "file": "scripts/blender/build_grey_kiln_landmarks.py",
+      "bytes": 24022,
+      "sha256": "488c7bc682f339a13e20277820b720c5e1bd5a67677578d257f698a8b832eac6"
+    },
+    {
+      "file": "SourceArt/Environment/GeneratedSource/GreyKilnColossusAI.obj",
+      "bytes": 3620983,
+      "sha256": "04699104f03cb98d5c8242e46f9d9fc9eb9092689d0b98d33ad37f31b255df86"
+    },
+    {
+      "file": "SourceArt/Environment/GeneratedSource/GreyKilnColossusAI.mtl",
+      "bytes": 261,
+      "sha256": "1d4dd6682ddd35cce0de667fc48d9bde14e888cc7f8f8ddf22271b5637416efc"
+    },
+    {
+      "file": "SourceArt/Environment/GeneratedSource/texture.png",
+      "bytes": 1212838,
+      "sha256": "9d931ece9b0978a40290a143ef012c1eb632981a2df23f7196fc97236324e2ce"
+    },
+    {
+      "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_source_v1.png",
+      "bytes": 1925991,
+      "sha256": "e5158037a1a9a97f51cde42afcc023a0b9a51b9b697cef0e70a6e08865b1cda8"
+    },
+    {
+      "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_source_v1_cutout.png",
+      "bytes": 2102062,
+      "sha256": "1bbdbaf0251d09c0144c2bfaa03c268e19d24797cf783646045e7af95652c1cd"
+    },
+    {
+      "file": "SourceArt/ReferenceReconstruction/Inputs/grey_kiln_colossus_triposr_input.png",
+      "bytes": 1417755,
+      "sha256": "c9deaebcd3684fe398b5d6d7c9de5b521e901954bb52c9d476b59141cb9d0a0c"
+    },
+    {
+      "file": "SourceArt/ReferenceReconstruction/Depth/manifest.json",
+      "bytes": 1543,
+      "sha256": "ce14068ae7dab221b4f41eba196d58456c884d9b3f0a86386fc6dbb7868d6ad4"
+    }
+  ]
+}

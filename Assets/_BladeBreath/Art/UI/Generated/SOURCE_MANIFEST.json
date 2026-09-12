@@ -1,0 +1,12 @@
+{
+  "asset": "SkillIcons_LongBlade.png",
+  "status": "project-owned generated prototype UI art",
+  "tool": "OpenAI built-in ImageGen",
+  "generated_on": "2026-09-02",
+  "dimensions": "2172x724 RGBA, three equal horizontal cells",
+  "sha256": "47FD238A2483A4D8FAEEFAB9C31FCBB9E006F0CDD20EE6EABD5220E5B305E4E3",
+  "reference_images": [],
+  "prompt": "Create one production-ready horizontal skill icon atlas for a dark isometric Chinese historical-fantasy action roguelite. Exactly three equal square cells in one row, no gaps between the cell canvases but with generous safe margins inside each cell. Transparent background outside each icon medallion. Each cell contains a centered circular charcoal-black carved-stone seal with a thin worn bronze rim, bone-white blade silhouette, restrained cinnabar-red accents and a few amber sparks. Strong simple silhouettes readable at 64 pixels, consistent lighting and line weight, no tiny detail. LEFT icon: a long single-edged Chinese saber lunging forward and forcing aside a crossed enemy blade, clear forward wedge and broken posture sparks. MIDDLE icon: the saber curves back around a guarding blade in a hooked returning arc, clear defensive counter motif. RIGHT icon: a powerful circular downward saber cut creates one broad ground shock ring, high-cost finisher motif. No words, no Chinese characters, no letters, no numbers, no logos, no watermark, no people, no hands, no extra icons, exactly three medallions.",
+  "production_use": "Runtime IMGUI atlas for Ying Tui, Hui Feng and Zhen Lie. Unity caps the imported texture at 1024 pixels, disables mipmaps/readability and uses clamp wrapping.",
+  "rights_note": "Original generated artwork for distribution with this project; no third-party reference image or commercial-game icon was supplied."
+}

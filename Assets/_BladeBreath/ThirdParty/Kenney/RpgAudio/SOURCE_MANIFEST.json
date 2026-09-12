@@ -1,0 +1,66 @@
+{
+  "author": "Kenney",
+  "license": "CC0-1.0",
+  "retrieved_on": "2026-09-02",
+  "source_page": "https://kenney.nl/assets/rpg-audio",
+  "download_url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+  "archive_sha256": "6dbeaf8544da958d8f2adcb4a4a4b76c1ade34a05f8ab9edccd327da7375f38b",
+  "selection_note": "Only the one-scene combat slice sounds needed by the prototype are retained.",
+  "files": [
+    {
+      "path": "cloth1.ogg",
+      "bytes": 16508,
+      "sha256": "ddb93a3671233f95da0e0b10367f082f7eb42fa6caaddcf776410aa8833c747d"
+    },
+    {
+      "path": "cloth2.ogg",
+      "bytes": 11787,
+      "sha256": "8a7451193c38bc05483aec25dd193e163a15d44cf7fff04ac7912573231b0201"
+    },
+    {
+      "path": "footstep00.ogg",
+      "bytes": 9475,
+      "sha256": "6fe61ef1fc3bcf0e253bf2eb64759db6cb69e2fe452f4d88cc597ecf78a3d601"
+    },
+    {
+      "path": "footstep01.ogg",
+      "bytes": 9900,
+      "sha256": "313472dba31fd0c855376069fa368bb5a198c27251cc8398ef464578b7047a4c"
+    },
+    {
+      "path": "footstep02.ogg",
+      "bytes": 9528,
+      "sha256": "2d9575b7dead6e1217ca113991fc5229e9b6d998ea0726ebbb277e7398ab888f"
+    },
+    {
+      "path": "footstep03.ogg",
+      "bytes": 10559,
+      "sha256": "a86756b9af9f370455ab47844239bb07fd1bee7a113068c91f0fcd9b72703fae"
+    },
+    {
+      "path": "footstep04.ogg",
+      "bytes": 11303,
+      "sha256": "fd264d72a7cd622b82abde202f4ed09fa7de95d34c36473ee938ce66cdf39830"
+    },
+    {
+      "path": "footstep05.ogg",
+      "bytes": 10288,
+      "sha256": "817957e1f95d97fd36870064c41673895575cde17bccb245f50364c86ed10198"
+    },
+    {
+      "path": "knifeSlice.ogg",
+      "bytes": 15532,
+      "sha256": "4cd96dc630bed9840c15f1dd2306da2cc56a4da26a5d3f1a03c5a7265ac5e54f"
+    },
+    {
+      "path": "knifeSlice2.ogg",
+      "bytes": 15099,
+      "sha256": "6c2064d0ef988d1ec3d56868e823ea8823a5cac00f2742560052633529407def"
+    },
+    {
+      "path": "License.txt",
+      "bytes": 478,
+      "sha256": "5735dfd72cb64cbbceda4ebc00c380c41ca680edb82ff153aa7c9ab97614c539"
+    }
+  ]
+}

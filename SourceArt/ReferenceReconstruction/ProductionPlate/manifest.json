@@ -1,0 +1,16 @@
+{
+  "tool": "Depth Anything V2",
+  "model": "vits",
+  "device": "cuda",
+  "camera_space_proxy_only": true,
+  "files": [
+    {
+      "source": "Assets\\_BladeBreath\\Art\\Environment\\Generated\\Textures\\GreyKilnDepthBackdrop_Albedo.png",
+      "depth": "GreyKilnDepthBackdrop_Albedo_depth.png",
+      "proxy": "GreyKilnDepthBackdrop_Albedo_camera_proxy.ply",
+      "vertices": 36864,
+      "triangles": 70824,
+      "vertical_fov": 37.0
+    }
+  ]
+}

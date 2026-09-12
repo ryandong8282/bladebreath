@@ -1,0 +1,77 @@
+{
+  "asset": "RealisticMale",
+  "purpose": "M0.3 textured, rigged male body replacing every temporary primitive and low-poly fighter body",
+  "source_repository": "https://github.com/matt-williams/makehuman-unity",
+  "source_commit": "34276c51cc25cc27953ae8866e89c8a593bfbf73",
+  "downloaded_utc_date": "2026-09-01",
+  "source_model_settings": "License/RealisticMale-source.mhm",
+  "files": [
+    {
+      "path": "Characters/RealisticMale/makehuman.fbx",
+      "source_path": "Assets/makehuman.fbx",
+      "bytes": 3480734,
+      "sha256": "58489172c52d589735f6bd2e54398299cbc63ad351548eeda938a5c0b9d9daf3",
+      "kind": "ASCII FBX 7.3 model, skinned meshes and basic MakeHuman rig"
+    },
+    {
+      "path": "Characters/RealisticMale/young_lightskinned_male_diffuse.png",
+      "source_path": "Assets/young_lightskinned_male_diffuse.png",
+      "bytes": 4448702,
+      "sha256": "4233a4e1e2d423daf8e5aa25521df93253be54b0ab6490147afae39b076f4fcb",
+      "kind": "male skin base color"
+    },
+    {
+      "path": "Characters/RealisticMale/male01_diffuse_black.png",
+      "source_path": "Assets/male01_diffuse_black.png",
+      "bytes": 2351214,
+      "sha256": "1216e2d65229b70095c6771014214c6cda9872034bd4df1d43699ba523ecf7f3",
+      "kind": "black hair base color"
+    },
+    {
+      "path": "Characters/RealisticMale/brown_eye.png",
+      "source_path": "Assets/brown_eye.png",
+      "bytes": 685702,
+      "sha256": "8fd9e675944f4af0cdfd12ec842780d0d38e8618e5a0b19b071cf3b125b9262a",
+      "kind": "brown eye base color"
+    },
+    {
+      "path": "Characters/RealisticMale/shoes02_default.png",
+      "source_path": "Assets/shoes02_default.png",
+      "bytes": 1425428,
+      "sha256": "6f8163686f67a5175bd0645917c62620ba9e22691ba6f338bdc222c1e9d8d376",
+      "kind": "shoe base color"
+    },
+    {
+      "path": "Characters/RealisticMale/suit01_diffuse.png",
+      "source_path": "Assets/Materials/suit01_diffuse.png",
+      "bytes": 2036413,
+      "sha256": "2466fd8665c688d4f6c3324490c25e9c0c66cf8559cad1d134427f92191b8354",
+      "kind": "temporary fitted clothing base color"
+    },
+    {
+      "path": "Characters/RealisticMale/suit01_normals.png",
+      "source_path": "Assets/suit01_normals.png",
+      "bytes": 1449471,
+      "sha256": "fd6de3073f4b06025407a59ed7a76900076041a977a2513145dde8f030925e22",
+      "kind": "temporary fitted clothing normal map"
+    }
+  ],
+  "contents": {
+    "skinned_meshes": 5,
+    "rig": "MakeHuman basic.json mapped to Unity Humanoid",
+    "appearance": "Asian male skin, short black hair, eyes, fitted clothing and shoes",
+    "runtime_texture_limit": 1024
+  },
+  "license": {
+    "character_and_makehuman_assets": "CC0 1.0",
+    "makehuman_license_copy": "License/MakeHuman-LICENSE.md",
+    "notes": "The retained MHM file identifies MakeHuman 1.0.2, the basic rig, source proxies and skin. MakeHuman's official license grants CC0 for exported characters and bundled graphical assets included in an official export. No upstream code is copied."
+  },
+  "project_changes": [
+    "Mapped the MakeHuman basic skeleton to Unity Humanoid",
+    "Retargeted the existing twelve combat motion slots without root motion",
+    "Created opaque Lit materials with 1K runtime texture limits",
+    "Added separate cold player and soot-red enemy clothing tints",
+    "Kept the complete face, hair, hands, feet and human silhouette visible"
+  ]
+}

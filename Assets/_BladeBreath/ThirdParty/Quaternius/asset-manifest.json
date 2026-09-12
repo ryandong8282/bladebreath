@@ -1,0 +1,56 @@
+{
+  "author": "Quaternius",
+  "license": "CC0-1.0",
+  "retrieved_on": "2026-08-31",
+  "sources": [
+    "https://quaternius.com/packs/universalbasecharacters.html",
+    "https://quaternius.itch.io/universal-base-characters",
+    "https://quaternius.com/packs/universalanimationlibrary.html",
+    "https://quaternius.itch.io/universal-animation-library"
+  ],
+  "character_archive_path": "Universal Base Characters[Standard]/Base Characters/Unity/Superhero_Male_FullBody.fbx",
+  "animation_archive_path": "Universal Animation Library[Standard]/Unity/UAL1_Standard.fbx",
+  "animation_source_sha256": "21b32d912da3cb93426d974fb945e86f5b2e86970acd2ce89905e0fbf9f1dcc2",
+  "selected_motions": {
+    "idle": "Armature|Idle_Loop",
+    "run": "Armature|Jog_Fwd_Loop",
+    "attack": "Armature|Sword_Attack",
+    "attack2": "Armature|Sword_Attack (mirrored by Unity importer; temporary combo variant)",
+    "attack3": "Armature|Sword_Attack (heavy combat retiming; temporary combo variant)",
+    "guard": "Armature|Sword_Idle",
+    "guard_enter": "Armature|Sword_Idle (non-looping entry slot)",
+    "guard_impact": "Armature|Hit_Chest (mirrored by Unity importer; temporary block-impact slot)",
+    "hit": "Armature|Hit_Chest",
+    "dodge": "Armature|Roll",
+    "dodge_short": "Armature|Roll (sampled to the existing short dodge clock)",
+    "death": "Armature|Death01"
+  },
+  "modifications": "Original FBX bytes unchanged. In-place animation FBX losslessly repackaged as a single-file ZIP; Unity setup imports twelve listed runtime motion slots from seven source takes. Mirrored/retimed slots are explicitly temporary presentation variants. Original texture files are not bundled.",
+  "files": [
+    {
+      "path": "Animations/UAL1_Standard.zip",
+      "bytes": 4720420,
+      "sha256": "e3107d1c31ef3914474c330cb0687434cf153d8687ae124fcca5ae4e6e9130d2"
+    },
+    {
+      "path": "Characters/Superhero_Male_FullBody.fbx",
+      "bytes": 826876,
+      "sha256": "79344418d754a59730b79d1874752e9592143db34abe8adf138fa9a92a4768e9"
+    },
+    {
+      "path": "License/AnimationLibrary-License.txt",
+      "bytes": 332,
+      "sha256": "6d01f55c6e4c49a2c9963e147e561945ae2c83958c8ca667d90a6bffdbfac061"
+    },
+    {
+      "path": "License/AnimationLibrary-README.txt",
+      "bytes": 702,
+      "sha256": "ccd02718886b5a57f10f0a8911a38cfe10c36880e1d6dfa3445923fba32d2a72"
+    },
+    {
+      "path": "License/BaseCharacters-License.txt",
+      "bytes": 806,
+      "sha256": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e"
+    }
+  ]
+}

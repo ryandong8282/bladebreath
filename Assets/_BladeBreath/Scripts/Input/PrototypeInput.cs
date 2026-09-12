@@ -8,10 +8,67 @@ namespace BladeBreath
 {
     public static class PrototypeInput
     {
+#if UNITY_EDITOR
+        private static bool _useEditorValidationInput;
+        private static Vector2 _editorMove;
+        private static bool _editorAttackPressed;
+        private static bool _editorHeavyPressed;
+        private static bool _editorSkillPressed;
+        private static bool _editorSkill2Pressed;
+        private static bool _editorSkill3Pressed;
+        private static bool _editorGuardPressed;
+        private static bool _editorGuardHeld;
+        private static bool _editorDodgePressed;
+        private static bool _editorResetPressed;
+
+        public static void SetEditorValidationInput(Vector2 move, bool attackPressed = false,
+            bool heavyPressed = false, bool guardPressed = false, bool guardHeld = false,
+            bool dodgePressed = false, bool resetPressed = false, bool skillPressed = false,
+            bool skill2Pressed = false, bool skill3Pressed = false)
+        {
+            _useEditorValidationInput = true;
+            _editorMove = Vector2.ClampMagnitude(move, 1f);
+            _editorAttackPressed = attackPressed;
+            _editorHeavyPressed = heavyPressed;
+            _editorSkillPressed = skillPressed;
+            _editorSkill2Pressed = skill2Pressed;
+            _editorSkill3Pressed = skill3Pressed;
+            _editorGuardPressed = guardPressed;
+            _editorGuardHeld = guardHeld;
+            _editorDodgePressed = dodgePressed;
+            _editorResetPressed = resetPressed;
+        }
+
+        public static void ClearEditorValidationInput()
+        {
+            _useEditorValidationInput = false;
+            _editorMove = Vector2.zero;
+            _editorAttackPressed = false;
+            _editorHeavyPressed = false;
+            _editorSkillPressed = false;
+            _editorSkill2Pressed = false;
+            _editorSkill3Pressed = false;
+            _editorGuardPressed = false;
+            _editorGuardHeld = false;
+            _editorDodgePressed = false;
+            _editorResetPressed = false;
+        }
+
+        private static bool Consume(ref bool value)
+        {
+            bool result = value;
+            value = false;
+            return result;
+        }
+#endif
+
         public static Vector2 Move
         {
             get
             {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return _editorMove;
+#endif
                 Vector2 value = Vector2.zero;
 
 #if ENABLE_INPUT_SYSTEM
@@ -53,6 +110,9 @@ namespace BladeBreath
         {
             get
             {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorAttackPressed);
+#endif
                 bool pressed = false;
 #if ENABLE_INPUT_SYSTEM
                 pressed |= Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame;
@@ -67,10 +127,90 @@ namespace BladeBreath
             }
         }
 
+        public static bool HeavyAttackPressed
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorHeavyPressed);
+#endif
+                bool pressed = false;
+#if ENABLE_INPUT_SYSTEM
+                pressed |= Keyboard.current != null && Keyboard.current.lKey.wasPressedThisFrame;
+                pressed |= Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame;
+#endif
+#if ENABLE_LEGACY_INPUT_MANAGER
+                pressed |= UnityEngine.Input.GetKeyDown(KeyCode.L);
+#endif
+                return pressed;
+            }
+        }
+
+        public static bool Skill1Pressed
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorSkillPressed);
+#endif
+                bool pressed = false;
+#if ENABLE_INPUT_SYSTEM
+                pressed |= Keyboard.current != null && Keyboard.current.hKey.wasPressedThisFrame;
+                pressed |= Gamepad.current != null && Gamepad.current.rightShoulder.wasPressedThisFrame;
+#endif
+#if ENABLE_LEGACY_INPUT_MANAGER
+                pressed |= UnityEngine.Input.GetKeyDown(KeyCode.H);
+#endif
+                return pressed;
+            }
+        }
+
+        // Kept as a compatibility alias for the first M0.3 skill check.
+        public static bool SkillPressed => Skill1Pressed;
+
+        public static bool Skill2Pressed
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorSkill2Pressed);
+#endif
+                bool pressed = false;
+#if ENABLE_INPUT_SYSTEM
+                pressed |= Keyboard.current != null && Keyboard.current.uKey.wasPressedThisFrame;
+#endif
+#if ENABLE_LEGACY_INPUT_MANAGER
+                pressed |= UnityEngine.Input.GetKeyDown(KeyCode.U);
+#endif
+                return pressed;
+            }
+        }
+
+        public static bool Skill3Pressed
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorSkill3Pressed);
+#endif
+                bool pressed = false;
+#if ENABLE_INPUT_SYSTEM
+                pressed |= Keyboard.current != null && Keyboard.current.iKey.wasPressedThisFrame;
+#endif
+#if ENABLE_LEGACY_INPUT_MANAGER
+                pressed |= UnityEngine.Input.GetKeyDown(KeyCode.I);
+#endif
+                return pressed;
+            }
+        }
+
         public static bool GuardPressed
         {
             get
             {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorGuardPressed);
+#endif
                 bool pressed = false;
 #if ENABLE_INPUT_SYSTEM
                 pressed |= Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame;
@@ -89,6 +229,9 @@ namespace BladeBreath
         {
             get
             {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return _editorGuardHeld;
+#endif
                 bool held = false;
 #if ENABLE_INPUT_SYSTEM
                 held |= Keyboard.current != null && Keyboard.current.kKey.isPressed;
@@ -107,6 +250,9 @@ namespace BladeBreath
         {
             get
             {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorDodgePressed);
+#endif
                 bool pressed = false;
 #if ENABLE_INPUT_SYSTEM
                 pressed |= Keyboard.current != null &&
@@ -128,6 +274,9 @@ namespace BladeBreath
         {
             get
             {
+#if UNITY_EDITOR
+                if (_useEditorValidationInput) return Consume(ref _editorResetPressed);
+#endif
                 bool pressed = false;
 #if ENABLE_INPUT_SYSTEM
                 pressed |= Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame;

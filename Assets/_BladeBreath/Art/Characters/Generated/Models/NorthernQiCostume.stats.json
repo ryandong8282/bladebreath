@@ -1,0 +1,118 @@
+{
+  "TunicTorso": {
+    "vertices": 432,
+    "triangles": 864
+  },
+  "SkirtFrontLeft": {
+    "vertices": 322,
+    "triangles": 640
+  },
+  "SkirtFrontRight": {
+    "vertices": 322,
+    "triangles": 640
+  },
+  "SkirtBack": {
+    "vertices": 322,
+    "triangles": 640
+  },
+  "SkirtLeft": {
+    "vertices": 248,
+    "triangles": 492
+  },
+  "SkirtRight": {
+    "vertices": 248,
+    "triangles": 492
+  },
+  "MantleBack": {
+    "vertices": 494,
+    "triangles": 984
+  },
+  "MantleShoulderLeft": {
+    "vertices": 204,
+    "triangles": 404
+  },
+  "MantleShoulderRight": {
+    "vertices": 204,
+    "triangles": 404
+  },
+  "BeltPendant": {
+    "vertices": 488,
+    "triangles": 968
+  },
+  "RoundCollar": {
+    "vertices": 288,
+    "triangles": 576
+  },
+  "Belt": {
+    "vertices": 288,
+    "triangles": 576
+  },
+  "FrontPlacket": {
+    "vertices": 96,
+    "triangles": 188
+  },
+  "BlankNameplate": {
+    "vertices": 96,
+    "triangles": 188
+  },
+  "LamellarFront": {
+    "vertices": 2688,
+    "triangles": 5264
+  },
+  "LamellarBack": {
+    "vertices": 2304,
+    "triangles": 4512
+  },
+  "LamellarRivetsFront": {
+    "vertices": 1736,
+    "triangles": 3360
+  },
+  "LamellarRivetsBack": {
+    "vertices": 1488,
+    "triangles": 2880
+  },
+  "ShoulderGuardLeft": {
+    "vertices": 820,
+    "triangles": 1632
+  },
+  "ShoulderGuardRight": {
+    "vertices": 820,
+    "triangles": 1632
+  },
+  "SleeveLeft": {
+    "vertices": 120,
+    "triangles": 236
+  },
+  "SleeveRight": {
+    "vertices": 120,
+    "triangles": 236
+  },
+  "BracerLeft": {
+    "vertices": 96,
+    "triangles": 188
+  },
+  "BracerRight": {
+    "vertices": 96,
+    "triangles": 188
+  },
+  "KneeGuardLeft": {
+    "vertices": 96,
+    "triangles": 188
+  },
+  "KneeGuardRight": {
+    "vertices": 96,
+    "triangles": 188
+  },
+  "HairKnot": {
+    "vertices": 266,
+    "triangles": 528
+  },
+  "HairBand": {
+    "vertices": 240,
+    "triangles": 480
+  },
+  "EnemyFaceDetails": {
+    "vertices": 1088,
+    "triangles": 2160
+  }
+}

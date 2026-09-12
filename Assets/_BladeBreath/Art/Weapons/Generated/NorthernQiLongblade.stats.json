@@ -1,0 +1,28 @@
+{
+  "Longblade_Steel": {
+    "vertices": 234,
+    "triangles": 452
+  },
+  "Longblade_Edge": {
+    "vertices": 78,
+    "triangles": 152
+  },
+  "Longblade_Bronze": {
+    "vertices": 786,
+    "triangles": 1540
+  },
+  "Longblade_Grip": {
+    "vertices": 504,
+    "triangles": 992
+  },
+  "TOTAL": {
+    "objects": 4,
+    "vertices": 1602,
+    "triangles": 3136,
+    "authored_bounds_m": {
+      "x": 0.16,
+      "y": 1.03,
+      "z": 0.06
+    }
+  }
+}

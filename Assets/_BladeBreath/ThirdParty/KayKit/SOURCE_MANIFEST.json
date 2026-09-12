@@ -1,0 +1,30 @@
+{
+  "asset": "KayKit Character Pack: Adventurers 1.0 - Knight animation source",
+  "author": "Kay Lousberg (KayKit)",
+  "license": "CC0 1.0",
+  "acquired_utc": "2026-09-02",
+  "upstream_repository": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0",
+  "upstream_commit": "672074b73ba276876a19e8816ecdc5241817ab47",
+  "source_url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Knight.glb",
+  "source_path": "SourceArt/ThirdParty/KayKit/Adventurers-1.0/Knight.glb",
+  "source_sha256": "60428e3abc09ba83e595d256e3af8c5c976b46cdae599f0802fc82b4a3445168",
+  "source_bytes": 3659532,
+  "license_path": "Assets/_BladeBreath/ThirdParty/KayKit/License/LICENSE.txt",
+  "license_sha256": "ae322141814056dda0deea7540d74c41d87aee1da319977cd1bd84ee5a923629",
+  "selected_actions": [
+    "1H_Melee_Attack_Slice_Diagonal",
+    "1H_Melee_Attack_Slice_Horizontal",
+    "1H_Melee_Attack_Stab",
+    "1H_Melee_Attack_Chop",
+    "Block",
+    "Blocking",
+    "Block_Hit",
+    "Dodge_Left",
+    "Dodge_Right"
+  ],
+  "processing": "Blender 5.2 LTS runs scripts/blender/extract_kaykit_actions.py. It exports one skeleton-only FBX with no KayKit mesh, textures, materials, weapon or character design. Unity retargets the selected takes to the current MakeHuman Humanoid.",
+  "output_path": "Assets/_BladeBreath/ThirdParty/KayKit/Animations/Editor/KayKit_Selected.fbx",
+  "output_sha256": "e9839d31dd6a3c0ab18060e75194a51d5c9cc445633c8f3a2a909333433be375",
+  "output_bytes": 2618236,
+  "generator": "Blender 5.2.1 LTS"
+}

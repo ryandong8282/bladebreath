@@ -1,0 +1,28 @@
+{
+  "asset": "Universal Animation Library 2 [Standard] - sword action source",
+  "author": "Quaternius",
+  "license": "CC0 1.0",
+  "acquired_utc": "2026-09-02",
+  "official_page": "https://quaternius.com/packs/universalanimationlibrary2.html",
+  "download_page": "https://opengameart.org/content/universal-animation-library-2",
+  "source_url": "https://opengameart.org/sites/default/files/universal_animation_library_2standard.zip",
+  "source_archive_sha256": "ec0e40d6d78fe9aaad59e322f40865a8675c22f0745e291622e54520391a9217",
+  "source_archive_bytes": 10257419,
+  "source_fbx_path_in_archive": "Universal Animation Library 2 [Standard]/Unity/UAL2_Standard.fbx",
+  "source_fbx_sha256": "d4a2dd67bb12bf0c01891bc59ee697e04db679d26883d30bd937c2f3fb6fec90",
+  "source_fbx_bytes": 24371692,
+  "selected_actions": [
+    "Sword_Regular_A",
+    "Sword_Regular_B",
+    "Sword_Regular_C",
+    "Sword_Dash_RM",
+    "Sword_Block"
+  ],
+  "processing": "The exact official Unity FBX is retained byte-for-byte inside a single-entry maximum-deflate ZIP. Unity extracts it only into a Git-ignored Editor source folder and copies the five named Humanoid clips into standalone runtime .anim assets. The mannequin mesh, materials and every unselected take have no runtime references.",
+  "archive_path": "Assets/_BladeBreath/ThirdParty/Quaternius/Animations2/UAL2_Standard.zip",
+  "archive_sha256": "69092ef7770027b3e8d4bde81b1e737a3d12463f4c28a8204a9be80d02afa415",
+  "archive_bytes": 4972086,
+  "license_path": "Assets/_BladeBreath/ThirdParty/Quaternius/Animations2/License/LICENSE.txt",
+  "license_sha256": "f9b1de4e8feff135555ac1c7d2eec65035a05fd74e4d632a3f826ac985c3f22c",
+  "license_bytes": 541
+}

@@ -1,0 +1,81 @@
+{
+  "author": "Kenney",
+  "license": "CC0-1.0",
+  "retrieved_on": "2026-09-02",
+  "source_page": "https://kenney.nl/assets/impact-sounds",
+  "download_url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+  "archive_sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+  "selection_note": "Only the one-scene combat slice sounds needed by the prototype are retained.",
+  "files": [
+    {
+      "path": "impactBell_heavy_000.ogg",
+      "bytes": 13915,
+      "sha256": "94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f"
+    },
+    {
+      "path": "impactBell_heavy_001.ogg",
+      "bytes": 15577,
+      "sha256": "9df61e3ae9a83dc65e5a1fd3ed19d480876f3b22b963a1b9ef6fa293592dcec4"
+    },
+    {
+      "path": "impactBell_heavy_002.ogg",
+      "bytes": 9252,
+      "sha256": "a4171ed1a4a17fb858a38de1c59b5b42e50d8f046c525706c0e3ac8671f189f5"
+    },
+    {
+      "path": "impactMetal_heavy_000.ogg",
+      "bytes": 6110,
+      "sha256": "e07045693e4a2b3d165c424e3dab4c781d9ff8880a386880ac89a51315d7f831"
+    },
+    {
+      "path": "impactMetal_heavy_001.ogg",
+      "bytes": 7279,
+      "sha256": "83554049f81f4db9209379e103c30bfa63f65c42189a03f300b045c2c82e23ae"
+    },
+    {
+      "path": "impactMetal_heavy_002.ogg",
+      "bytes": 5634,
+      "sha256": "b914c8f1eb7c0f34bb165d7c77f4be0351f6be0660c13c53e65424e262e2c093"
+    },
+    {
+      "path": "impactMetal_heavy_003.ogg",
+      "bytes": 6209,
+      "sha256": "b0f2ba4dabde9a87eb9c188a19d31e0c2300fd321adeba08d3b9b8aa011d7037"
+    },
+    {
+      "path": "impactMetal_heavy_004.ogg",
+      "bytes": 5788,
+      "sha256": "6d65b463c0555dd5be16b8db6d2cbe23a94e07a4637779b8ad17d0db3e500a87"
+    },
+    {
+      "path": "impactMetal_medium_000.ogg",
+      "bytes": 7117,
+      "sha256": "a96f879fec0864a8938e0c745b6996a6c5679c16a234ce31a01cc995e8401003"
+    },
+    {
+      "path": "impactMetal_medium_001.ogg",
+      "bytes": 6151,
+      "sha256": "e8a9eaba7c4d27422e4eeb3e6c7100d5d7dc0f83e005efc98c960adcc5265337"
+    },
+    {
+      "path": "impactMetal_medium_002.ogg",
+      "bytes": 5857,
+      "sha256": "7e89ce2ca0dbda95ea2b78d4b50791cab35c10d20e9f5ccd45dd0b00e99ff548"
+    },
+    {
+      "path": "impactMetal_medium_003.ogg",
+      "bytes": 6964,
+      "sha256": "2a185e2e57211d02c1bdd33b872d6b6a2fe83e6c14f4e56f426a95e717acf08e"
+    },
+    {
+      "path": "impactMetal_medium_004.ogg",
+      "bytes": 5744,
+      "sha256": "03e10f800199c7166208e41c11cf4acfac6cc265467f02357da71972bc967295"
+    },
+    {
+      "path": "License.txt",
+      "bytes": 608,
+      "sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db"
+    }
+  ]
+}

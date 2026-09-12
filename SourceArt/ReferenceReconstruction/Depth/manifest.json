@@ -1,0 +1,48 @@
+{
+  "tool": "Depth Anything V2",
+  "model": "vits",
+  "device": "cuda",
+  "camera_space_proxy_only": true,
+  "files": [
+    {
+      "source": "D:\\Dev\\bladebreath\\SourceArt\\ReferenceReconstruction\\Targets\\target_01.jpg",
+      "depth": "target_01_depth.png",
+      "proxy": "target_01_camera_proxy.ply",
+      "vertices": 24630,
+      "triangles": 47120,
+      "vertical_fov": 52.0
+    },
+    {
+      "source": "D:\\Dev\\bladebreath\\SourceArt\\ReferenceReconstruction\\Targets\\target_02.jpg",
+      "depth": "target_02_depth.png",
+      "proxy": "target_02_camera_proxy.ply",
+      "vertices": 24630,
+      "triangles": 46242,
+      "vertical_fov": 52.0
+    },
+    {
+      "source": "D:\\Dev\\bladebreath\\SourceArt\\ReferenceReconstruction\\Targets\\target_03.jpg",
+      "depth": "target_03_depth.png",
+      "proxy": "target_03_camera_proxy.ply",
+      "vertices": 24630,
+      "triangles": 46870,
+      "vertical_fov": 52.0
+    },
+    {
+      "source": "D:\\Dev\\bladebreath\\SourceArt\\ReferenceReconstruction\\Targets\\target_04.jpg",
+      "depth": "target_04_depth.png",
+      "proxy": "target_04_camera_proxy.ply",
+      "vertices": 24630,
+      "triangles": 47104,
+      "vertical_fov": 52.0
+    },
+    {
+      "source": "D:\\Dev\\bladebreath\\SourceArt\\ReferenceReconstruction\\Targets\\target_05.jpg",
+      "depth": "target_05_depth.png",
+      "proxy": "target_05_camera_proxy.ply",
+      "vertices": 24630,
+      "triangles": 46756,
+      "vertical_fov": 52.0
+    }
+  ]
+}

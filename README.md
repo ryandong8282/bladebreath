@@ -14,7 +14,7 @@
 
 - Unity `6000.3.23f1`
 - C#
-- Universal Render Pipeline `17.3.0`
+- Universal Render Pipeline `17.3.0` 包（当前训练场仍使用内置渲染管线）
 - Input System `1.16.0`
 - 横屏、iOS 优先
 - 3D 场景 + 固定倾斜俯视相机
@@ -24,7 +24,8 @@
 ### 已经移植到 Unity C# 的灰盒能力
 
 - 相机相对移动；
-- 长刀单次攻击；
+- 长刀三段轻击与独立重斩；
+- 双方有效攻击帧相遇时的拼刀；
 - 按住格挡与起手弹反窗口；
 - 方向闪身与无敌窗口；
 - 生命、架势、架势恢复、崩势；
@@ -35,8 +36,6 @@
 
 ### 还没有移植完
 
-- 长刀三段连段；
-- 主动拼刀等级；
 - 听刃 / 流影两种流派与四个武技；
 - 势权；
 - 手机虚拟摇杆和技能按钮；
@@ -44,6 +43,12 @@
 - 房间流程、悟招三选一和局外叙事。
 
 因此当前是 **Unity 迁移基线**，不是对旧 Godot M0.2 的功能完全等价复刻。
+
+### 本次新增：人形角色接入工具
+
+已接入一套有真实男性面部、头发、手脚、服装和完整骨骼的 MakeHuman CC0 人体，以及 Quaternius 与 KayKit 的 CC0 动作和许可记录。主角与敌人共用人体和骨骼，通过冷蓝/烟红服装材质区分，并绑定右手长刀；十四个运行时槽位包含四条互不重复的刀法、格挡受力、前滚和左右闪身。旧的球体、盒子和棱面护甲不再挂在角色 Prefab 上。原战斗规则继续负责命中和无敌判定。
+
+**2026-09-02 已在 Windows 的 Unity 6000.3.23f1 中生成并运行人形训练场。** 真实编辑器编译、无警告的 KayKit Humanoid 导入、四条独立刀法、左右闪身，以及键盘移动、拼刀、格挡、弹反、受击、处决和十次重置的 Play Mode 检查通过。首次操作及尚未完成的 iPhone 验收见 [人形样片上手指南](docs/14_HUMANOID_SANDBOX.md)。手机按钮与完整肉鸽流程不在这一步内。
 
 ## 第一次打开 Unity 项目
 
@@ -54,25 +59,28 @@
    cd bladebreath
    ```
 
-2. 在 Unity Hub 安装 `6000.3.23f1`，并勾选 **iOS Build Support**。
+2. 在 Unity Hub 安装 `6000.3.23f1`。Windows 试玩只需编辑器本体；最终在 Mac 上构建 iOS 时再安装 **iOS Build Support** 和 Xcode。
 3. 在 Unity Hub 选择 **Add project from disk**，打开仓库根目录。
 4. 等待 Package Manager 还原 URP 与 Input System，并等待脚本编译结束。
 5. 菜单执行：
 
    ```text
-   BladeBreath > Prototype > Create Combat Sandbox
+   BladeBreath > Art > Create Humanoid Sandbox
    ```
 
-6. 打开自动生成的 `Assets/_BladeBreath/Scenes/CombatSandbox.unity`，点击 Play。
+6. 等待自动配置检查完成，在生成的 `Assets/_BladeBreath/Scenes/HumanoidSandbox.unity` 中点击 Play。
 
-即使还没有生成场景，空场景进入 Play Mode 时，`PrototypeBootstrap` 也会自动创建灰盒；正式开发仍以保存后的 `CombatSandbox.unity` 为准。
+要对照原来的胶囊灰盒，可执行 `BladeBreath > Prototype > Create Combat Sandbox`。这两个场景分开保存，人形菜单再次运行会保留已有资产和场景修改。
+
+即使还没有生成场景，空场景进入 Play Mode 时，`PrototypeBootstrap` 也会自动创建胶囊灰盒；看到胶囊时请确认已经执行人形菜单并打开 `HumanoidSandbox.unity`。
 
 ## 灰盒操作
 
 | 动作 | 键盘 / 鼠标 | 手柄 |
 |---|---|---|
 | 移动 | `WASD` / 方向键 | 左摇杆 |
-| 斩击 / 处决 | `J` / 鼠标左键 | West / X |
+| 三段轻击 / 处决 | `J` / 鼠标左键 | West / X |
+| 上段重斩 | `L` | North / Y |
 | 格挡 / 起手弹反 | 按住 `K` / 鼠标右键 | 左肩键 |
 | 闪身 | `Space` / `Shift` | East / B |
 | 重置 | `R` | Start |
@@ -151,11 +159,12 @@ make validate
 - [老板试玩指南](docs/10_OWNER_GUIDE.md)
 - [旧 M0.2 构建报告](docs/11_M0_2_BUILD_REPORT.md)
 - [Unity 迁移记录](docs/13_UNITY_MIGRATION.md)
+- [人形样片上手指南](docs/14_HUMANOID_SANDBOX.md)
 - [开发 Backlog](docs/BACKLOG.md)
 - [老板许愿池](docs/WISH_POOL.md)
 
 ## 原创与授权边界
 
-当前 Unity 灰盒只使用引擎原生几何体、代码生成材质和 IMGUI，不含第三方模型、贴图、字体、动画、音乐或音效。外部或 AI 生成资产进入工程前必须登记在 [ASSET_LICENSE.md](ASSET_LICENSE.md)。
+原 Unity 灰盒使用引擎原生几何体、代码材质和 IMGUI。当前人形样片增加了 MakeHuman CC0 真人身体、Quaternius CC0 动画、Poly Haven CC0 场景表面，以及六组已登记但尚未挂到真人服装上的项目生成表面；来源、原始许可、完整 ImageGen 提示词、修改方式和哈希均登记在 [ASSET_LICENSE.md](ASSET_LICENSE.md)及对应素材清单。未加入外部字体、音乐或音效。后续外部或 AI 生成资产进入工程前仍须登记。
 
 代码采用 [MIT License](LICENSE)。原创美术、音乐与剧情资产可在对应目录另行声明授权。
